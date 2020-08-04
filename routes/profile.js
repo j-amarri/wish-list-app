@@ -16,7 +16,11 @@ router.get('/:id', (req, res, next) => {
   User.findById(id)
     .then(data => {
       user = data;
-      return Wish.find({ creator: id });
+      if (session.user === id) {
+        return Wish.find({ creator: id });
+      } else {
+        return Wish.find({ creator: id, public: true });
+      }
     })
     .then(wish => {
       console.log(wish);
