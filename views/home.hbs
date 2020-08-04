@@ -5,9 +5,35 @@
       <a href="/wish/{{ _id }}"><h3>{{ title }}</h3></a>
       <p>{{ description }}</p>
       <span>{{ category }}</span>
+      <div class="map-small"></div>
     </div>
   {{/each}}
 </div>
 <form action="/wish/create">
   <button>Add your wish</button>
 </form>
+
+
+{{!-- <script>
+  function init () {
+    const mapContainerElement = document.getElementById('map-small');
+    const map = new window.google.maps.Map(mapContainerElement, {
+      center: {
+        lat: {{ wish.location.coordinates.[1] }},
+        lng: {{ wish.location.coordinates.[0] }}
+      },
+      zoom: 6
+    });
+// const longitude = {{ wish.location.coordinates.[1] }};
+// const latitude = {{ wish.location.coordinates.[0] }};
+// const marker = new window.google.maps.Marker({
+//   map,
+//   position: {
+//     lat: {{ wish.location.coordinates.[1] }},
+//     lng: {{ wish.location.coordinates.[0] }}
+//   }
+// });
+// }
+</script>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script> --}}

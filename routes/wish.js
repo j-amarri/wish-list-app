@@ -10,13 +10,8 @@ wishRouter.get('/create', routeGuard, (req, res) => {
 });
 
 wishRouter.post('/create', routeGuard, (req, res, next) => {
-<<<<<<< HEAD
   const { title, description, category, public } = req.body;
-  let location = {
-=======
-  const { title, description, category, private } = req.body;
   const location = {
->>>>>>> 6500c5f2fea6c740d260718b2b972f16f91a78bb
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
   };
