@@ -5,7 +5,6 @@ const User = require('./../models/user');
 
 const { Router } = require('express');
 const router = new Router();
-//const routeGuard = require('./../middleware/route-guard');
 
 const nodemailer = require('nodemailer');
 

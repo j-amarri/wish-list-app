@@ -16,6 +16,7 @@ const indexRouter = require('./routes/index');
 const homeRouter = require('./routes/home');
 const wishRouter = require('./routes/wish');
 const authenticationRouter = require('./routes/authentication');
+const profileRouter = require('./routes/profile');
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use('/', indexRouter);
 app.use('/', authenticationRouter);
 app.use('/home', homeRouter);
 app.use('/wish', wishRouter);
+app.use('/profile', profileRouter);
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
