@@ -35,9 +35,9 @@ const schema = new mongoose.Schema(
       ],
       default: 'Other'
     },
-    private: {
+    public: {
       type: Boolean,
-      default: false
+      default: true
     },
     location: {
       coordinates: [

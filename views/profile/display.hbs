@@ -8,5 +8,10 @@
 <p>{{user.email}}</p>
 
 {{#each wish}}
+
+{{#if this.public}}
 <p>{{this.title}}</p>
+
+{{/if }}
+
 {{/each}}
