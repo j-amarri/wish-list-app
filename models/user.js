@@ -15,6 +15,10 @@ const schema = new mongoose.Schema({
   },
   passwordHash: {
     type: String
+  },
+  confirmationToken: {
+    type: String,
+    unique: true
   }
 });
 
