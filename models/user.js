@@ -19,6 +19,11 @@ const schema = new mongoose.Schema({
   confirmationToken: {
     type: String,
     unique: true
+  },
+  status: {
+    type: String,
+    enum: ['active', 'pending'],
+    default: 'pending'
   }
 });
 
