@@ -1,33 +1,34 @@
 <h1>{{ wish.title }}</h1>
-<form action="/wish/{{ wish._id }}/edit" method="GET">
-  <button>Edit your wish</button>
-</form>
-<form action="/wish/{{ wish._id }}/delete" method="POST">
-  <button>Delete your wish</button>
-</form>
 <h5>{{ wish.category }}</h5>
 <h5>{{ wish.private }}</h5>
 <p>{{ wish.description}}</p>
 
 <div id="map-single"></div>
 
+<form action="/wish/{{ wish._id }}/edit" method="GET">
+  <button>Edit your wish</button>
+</form>
+<form action="/wish/{{ wish._id }}/delete" method="POST">
+  <button>Delete your wish</button>
+</form>
+
 <script>
   function init () {
     const mapContainerElement = document.getElementById('map-single');
     const map = new window.google.maps.Map(mapContainerElement, {
       center: {
-        lat: {{ wish.location.coordinates.[0] }},
-        lng: {{ wish.location.coordinates.[1] }}
+        lat: {{ wish.location.coordinates.[1] }},
+        lng: {{ wish.location.coordinates.[0] }}
       },
-      zoom: 11
+      zoom: 6
     });
-  const longitude = {{ wish.location.coordinates.[0] }};
-  const latitude = {{ wish.location.coordinates.[1] }};
+  const longitude = {{ wish.location.coordinates.[1] }};
+  const latitude = {{ wish.location.coordinates.[0] }};
   const marker = new window.google.maps.Marker({
     map,
     position: {
-      lat: {{ wish.location.coordinates.[0] }},
-      lng: {{ wish.location.coordinates.[1] }}
+      lat: {{ wish.location.coordinates.[1] }},
+      lng: {{ wish.location.coordinates.[0] }}
     }
   });
   }
