@@ -1,1 +1,12 @@
-<h1>{{data.name}}</h1>
+<h1>{{user.name}}</h1>
+<a href="/profile/{{user.id}}/edit">
+  <h5>Edit</h5>
+</a>
+
+
+<p>{{user.status}}</p>
+<p>{{user.email}}</p>
+
+{{#each wish}}
+<p>{{this.title}}</p>
+{{/each}}
