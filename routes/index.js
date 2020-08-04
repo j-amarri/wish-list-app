@@ -11,6 +11,10 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Hello World!' });
 });
 
+router.get('/home', routeGuard, (req, res) => {
+  res.render('home');
+});
+
 router.get('/sign-up', (req, res, next) => {
   res.render('sign-up');
 });
@@ -28,7 +32,7 @@ router.post('/sign-up', (req, res, next) => {
     })
     .then(user => {
       req.session.user = user._id;
-      res.redirect('/');
+      res.redirect('/home');
     })
     .catch(error => {
       next(error);
@@ -54,7 +58,7 @@ router.post('/sign-in', (req, res, next) => {
     .then(result => {
       if (result) {
         req.session.user = user._id;
-        res.redirect('/');
+        res.redirect('/home');
       } else {
         return Promise.reject(new Error('Wrong password.'));
       }
@@ -67,10 +71,6 @@ router.post('/sign-in', (req, res, next) => {
 router.post('/sign-out', (req, res, next) => {
   req.session.destroy();
   res.redirect('/');
-});
-
-router.get('/private', routeGuard, (req, res, next) => {
-  res.render('private');
 });
 
 module.exports = router;
