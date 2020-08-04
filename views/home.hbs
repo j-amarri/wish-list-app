@@ -2,7 +2,7 @@
 <div class="wish-list">
   {{#each wishes}}
     <div class="wish"></div>
-      <h3>{{ title }}</h3>
+      <a href="/wish/{{ _id }}"><h3>{{ title }}</h3></a>
       <p>{{ description }}</p>
       <span>{{ category }}</span>
     </div>

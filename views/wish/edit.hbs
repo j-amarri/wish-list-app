@@ -1,8 +1,9 @@
-<h1>Create your Wish</h1>
+<h1>Edit your post</h1>
+<h3>{{ wish.title }}</h3>
 
 <form method="POST">
-  <input name="title" placeholder="The title of your wish..."></textarea>
-  <textarea name="description" placeholder="The description of your wish..."></textarea>
+  <input name="title" placeholder="{{ wish.title }}"></textarea>
+  <textarea name="description" placeholder="{{ wish.description }}"></textarea>
 
   <label for="category-select">Your wish category</label>
   <select name="category" id="category-select">
@@ -19,7 +20,7 @@
     <option value="Other">Other</option>
   </select>
 
-  <p>Who should see your wish?</p>
+  <p>Who should see your post?</p>
   <div>
     <input type="radio" id="public" name="private" value="false">
     <label for="public">Public</label>
@@ -29,5 +30,5 @@
     <label for="private">Private</label>
   </div>
 
-  <button>Create wish</button>
+  <button>Edit your wish</button>
 </form>

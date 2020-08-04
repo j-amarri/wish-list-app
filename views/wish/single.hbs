@@ -1,1 +1,10 @@
-{{!-- Display single wish information --}}
+<h1>{{ wish.title }}</h1>
+<form action="/wish/{{ wish._id }}/edit" method="GET">
+  <button>Edit your wish</button>
+</form>
+<form action="/wish/{{ wish._id }}/delete" method="POST">
+  <button>Delete your wish</button>
+</form>
+<h5>{{ wish.category }}</h5>
+<h5>{{ wish.private }}</h5>
+<p>{{ wish.description}}</p>
