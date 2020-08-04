@@ -75,6 +75,10 @@ textarea {
   width: 100%;
   height: 400px; }
 
+#map-small {
+  width: 20%;
+  height: 100px; }
+
 .wish-coordinates {
   display: none; }
 
