@@ -50,24 +50,24 @@ router.post('/sign-up', (req, res, next) => {
       });
     })
     .then(document => {
-      req.session.user = document._id;
-      res.redirect('/home');
       user = document;
-    })
-    .then(() => {
       transport.sendMail({
         from: process.env.NODEMAILER_EMAIL,
         to: process.env.NODEMAILER_EMAIL,
         subject: 'Please verify your email to activate your account',
         html: `
         <html>
-          <body>
-            <h1>Hi ${user.name}</h1>
-            <a href="http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}">Click here to verify your account: http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}</a>
-          </body>
+        <body>
+        <h1>Hi ${user.name}</h1>
+        <a href="http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}">Click here to verify your account: http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}</a>
+        </body>
         </html>
         `
       });
+    })
+    .then(() => {
+      req.session.user = user._id;
+      res.redirect('/home');
     })
     .catch(error => {
       next(error);
