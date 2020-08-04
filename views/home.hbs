@@ -1,4 +1,13 @@
-<p>Welcome to your Wishes!</p>
+<h1>Welcome to your wishes!</h1>
+<div class="wish-list">
+  {{#each wishes}}
+    <div class="wish"></div>
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
+      <span>{{ category }}</span>
+    </div>
+  {{/each}}
+</div>
 <form action="/wish/create">
   <button>Add your wish</button>
 </form>

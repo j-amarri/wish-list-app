@@ -2,6 +2,7 @@
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
+const Wish = require('./../models/wish');
 
 const { Router } = require('express');
 const router = new Router();
@@ -11,8 +12,14 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Hello World!' });
 });
 
-router.get('/home', routeGuard, (req, res) => {
-  res.render('home');
+router.get('/home', routeGuard, (req, res, next) => {
+  Wish.find()
+    .then(wishes => {
+      res.render('home', { wishes });
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 router.get('/sign-up', (req, res, next) => {

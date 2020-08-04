@@ -20,7 +20,7 @@ wishRouter.post('/create', routeGuard, (req, res, next) => {
   })
     .then(() => {
       console.log();
-      res.redirect('/');
+      res.redirect('/home');
     })
     .catch(error => {
       next(error);
