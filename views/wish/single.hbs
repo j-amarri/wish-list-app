@@ -8,3 +8,29 @@
 <h5>{{ wish.category }}</h5>
 <h5>{{ wish.private }}</h5>
 <p>{{ wish.description}}</p>
+
+<div id="map-single"></div>
+
+<script>
+  function init () {
+    const mapContainerElement = document.getElementById('map-single');
+    const map = new window.google.maps.Map(mapContainerElement, {
+      center: {
+        lat: {{ wish.location.coordinates.[0] }},
+        lng: {{ wish.location.coordinates.[1] }}
+      },
+      zoom: 11
+    });
+  //  const longitude = {{ place.location.coordinates.[0] }};
+  //  const latitude = {{ place.location.coordinates.[1] }};
+  //  const marker = new window.google.maps.Marker({
+  //    map,
+  //    position: {
+  //      lat: latitude,
+  //      lng: longitude
+  //    }
+  //  });
+  }
+</script>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>

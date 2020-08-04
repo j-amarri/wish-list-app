@@ -2,43 +2,61 @@
 
 const mongoose = require('mongoose');
 
-const schema = new mongoose.Schema({
-  creator: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+const schema = new mongoose.Schema(
+  {
+    creator: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+      required: true
+    },
+    title: {
+      type: String,
+      minlength: 3,
+      maxlength: 200,
+      required: true
+    },
+    description: {
+      type: String
+    },
+    category: {
+      type: String,
+      enum: [
+        'Travel',
+        'Relationship',
+        'Career',
+        'Financial',
+        'Entertainment',
+        'Adventure',
+        'Contribution',
+        'Creativity',
+        'Education',
+        'Health',
+        'Other'
+      ],
+      default: 'Other'
+    },
+    private: {
+      type: Boolean,
+      default: false
+    },
+    location: {
+      coordinates: [
+        {
+          type: Number,
+          min: -180,
+          max: 180
+        }
+      ],
+      type: {
+        type: String,
+        default: 'Point'
+      }
+    }
   },
-  title: {
-    type: String,
-    minlength: 3,
-    maxlength: 200,
-    required: true
-  },
-  description: {
-    type: String
-  },
-  category: {
-    type: String,
-    enum: [
-      'Travel',
-      'Relationship',
-      'Career',
-      'Financial',
-      'Entertainment',
-      'Adventure',
-      'Contribution',
-      'Creativity',
-      'Education',
-      'Health',
-      'Other'
-    ],
-    default: 'Other'
-  },
-  private: {
-    type: Boolean,
-    default: false
+  {
+    timestamps: true
   }
-});
+);
 
 const Wish = mongoose.model('Wish', schema);
 

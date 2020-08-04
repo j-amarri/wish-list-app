@@ -11,12 +11,17 @@ wishRouter.get('/create', routeGuard, (req, res) => {
 
 wishRouter.post('/create', routeGuard, (req, res, next) => {
   const { title, description, category, private } = req.body;
+  let location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
 
   Wish.create({
     title,
     description,
     category,
     private,
+    location: location,
     creator: req.session.user
   })
     .then(() => {
