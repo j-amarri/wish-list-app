@@ -10,8 +10,13 @@ wishRouter.get('/create', routeGuard, (req, res) => {
 });
 
 wishRouter.post('/create', routeGuard, (req, res, next) => {
+<<<<<<< HEAD
   const { title, description, category, public } = req.body;
   let location = {
+=======
+  const { title, description, category, private } = req.body;
+  const location = {
+>>>>>>> 6500c5f2fea6c740d260718b2b972f16f91a78bb
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
   };
@@ -59,8 +64,18 @@ wishRouter.get('/:id/edit', routeGuard, (req, res, next) => {
 wishRouter.post('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
   const { title, description, category, private } = req.body;
+  const location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
 
-  Wish.findByIdAndUpdate(id, { title, description, category, private })
+  Wish.findByIdAndUpdate(id, {
+    title,
+    description,
+    category,
+    private,
+    location: location
+  })
     .then(() => {
       res.redirect('/home');
     })
