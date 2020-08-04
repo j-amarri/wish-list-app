@@ -7,7 +7,9 @@ const router = new Router();
 const routeGuard = require('./../middleware/route-guard');
 
 router.get('/', routeGuard, (req, res, next) => {
-  Wish.find()
+  const id = req.session.user;
+  console.log(id);
+  Wish.find({ creator: id })
     .then(wishes => {
       res.render('home', { wishes });
     })
