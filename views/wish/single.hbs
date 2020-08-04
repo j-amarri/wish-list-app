@@ -21,15 +21,15 @@
       },
       zoom: 11
     });
-  //  const longitude = {{ place.location.coordinates.[0] }};
-  //  const latitude = {{ place.location.coordinates.[1] }};
-  //  const marker = new window.google.maps.Marker({
-  //    map,
-  //    position: {
-  //      lat: latitude,
-  //      lng: longitude
-  //    }
-  //  });
+  const longitude = {{ wish.location.coordinates.[0] }};
+  const latitude = {{ wish.location.coordinates.[1] }};
+  const marker = new window.google.maps.Marker({
+    map,
+    position: {
+      lat: {{ wish.location.coordinates.[0] }},
+      lng: {{ wish.location.coordinates.[1] }}
+    }
+  });
   }
 </script>
 

@@ -24,6 +24,11 @@ const app = express();
 app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+app.use((req, res, next) => {
+  res.locals.environmentVariables = process.env;
+  next();
+});
+
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(
   sassMiddleware({
