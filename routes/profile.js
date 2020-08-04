@@ -23,7 +23,6 @@ router.get('/:id', (req, res, next) => {
       }
     })
     .then(wish => {
-      console.log(wish);
       res.render('profile/display', { user, wish, session });
     })
     .catch(err => {

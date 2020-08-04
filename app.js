@@ -10,6 +10,9 @@ const mongoose = require('mongoose');
 const sassMiddleware = require('node-sass-middleware');
 const serveFavicon = require('serve-favicon');
 
+const hbs = require('hbs');
+const hbsJsonHelper = require('hbs-json');
+
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
 
@@ -31,6 +34,8 @@ app.use((req, res, next) => {
 });
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
+hbs.registerHelper('json', hbsJsonHelper);
+
 app.use(
   sassMiddleware({
     src: join(__dirname, 'public'),
