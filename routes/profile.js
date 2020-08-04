@@ -10,6 +10,7 @@ const routeGuard = require('./../middleware/route-guard');
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
+  const creator = req.session.user;
   let user;
   User.findById(id)
     .then(data => {
