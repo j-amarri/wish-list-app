@@ -52,16 +52,27 @@ router.get('/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
+router.post('/:id/edit', (req, res, next) => {
+  const id = req.params.id;
+  const { name, email } = req.body;
+
+  User.findByIdAndUpdate(id, { name, email })
+    .then(() => {
+      res.redirect(`/profile/${id}`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
 router.post(
-  '/:id/edit',
+  '/:id/updatePhoto',
   routeGuard,
   upload.single('photo'),
   (req, res, next) => {
     const id = req.params.id;
     const url = req.file.path;
-    const { name, email } = req.body;
-
-    User.findByIdAndUpdate(id, { name, email, profilePhoto: url })
+    User.findByIdAndUpdate(id, { profilePhoto: url })
       .then(() => {
         res.redirect(`/profile/${id}`);
       })
@@ -71,8 +82,18 @@ router.post(
   }
 );
 
-const helloWorld = hello => {
-  console.log('My name is');
-};
+router.post('/:id/deletePhoto', routeGuard, (req, res, next) => {
+  const id = req.params.id;
+  User.findByIdAndUpdate(id, {
+    profilePhoto:
+      'https://res.cloudinary.com/dprjjpxak/image/upload/v1596622972/person_wfngle.png'
+  })
+    .then(() => {
+      res.redirect(`/profile/${id}`);
+    })
+    .catch(err => {
+      next(err);
+    });
+});
 
 module.exports = router;
