@@ -1,6 +1,17 @@
 <h1>Edit your post</h1>
 <h3>{{ wish.title }}</h3>
 
+{{#if wish.hasOwnPicture}}
+  <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
+{{else }}
+  <img src="{{ wish.wishPicture }}{{ wish.category }}" alt="{{ wish.category }} picture">
+{{/if }}
+
+<form action="/wish/{{wish._id}}/updatePicture" method="POST" enctype="multipart/form-data">
+  <input type="file" name="photo">
+  <button>Update picture</button>
+</form>
+
 <form method="POST">
   <input name="title" value="{{ wish.title }}"></textarea>
   <input name="description" value="{{ wish.description }}" placeholder="Description" </input>

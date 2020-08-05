@@ -6,6 +6,12 @@
       <p>{{ description }}</p>
       <span>{{ category }}</span>
 
+      {{#if hasOwnPicture}}
+        <img src="{{wishPicture}}" alt="{{ title }} picture">
+      {{else }}
+        <img src="{{ wishPicture }}{{ category }}" alt="{{ category }} picture">
+      {{/if }}
+
 
       {{!-- <div class="map-small"></div> --}}
     {{#if complete}}

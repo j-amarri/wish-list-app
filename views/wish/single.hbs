@@ -3,11 +3,21 @@
 <h5>{{ wish.private }}</h5>
 <p>{{ wish.description}}</p>
 
+{{#if wish.hasOwnPicture}}
+  <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
+{{else }}
+  <img src="{{ wish.wishPicture }}{{ wish.category }}" alt="{{ wish.category }} picture">
+{{/if }}
+
 <div id="map-single"></div>
 
-<form action="/wish/{{ wish._id }}/edit" method="GET">
+<a href="/wish/{{ wish._id }}/edit">  
   <button>Edit your wish</button>
-</form>
+</a>
+
+
+
+
 <form action="/wish/{{ wish._id }}/delete" method="POST">
   <button>Delete your wish</button>
 </form>

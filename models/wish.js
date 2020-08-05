@@ -35,6 +35,14 @@ const schema = new mongoose.Schema(
       ],
       default: 'Other'
     },
+    wishPicture: {
+      type: String,
+      default: 'https://source.unsplash.com/1600x900/?'
+    },
+    hasOwnPicture: {
+      type: Boolean,
+      default: false
+    },
     complete: {
       type: Boolean,
       default: false
