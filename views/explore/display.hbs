@@ -19,3 +19,36 @@
 {{#each data}}
 <p>{{this.title}}</p>
 {{/each }}
+
+<h3>Wishes map by category</h3>
+<div id="map-single"></div>
+
+<script>
+  function init() {
+    const mapContainerElement = document.getElementById('map-single');
+    const map = new window.google.maps.Map(mapContainerElement, {
+      center: {
+        lat: 0,
+        lng: 0
+      },
+      zoom: 1
+    });
+    const whishes = {{{ json data }}};
+  for (let wish of whishes) {
+    const marker = new window.google.maps.Marker({
+      map,
+      position: {
+        lat: wish.location.coordinates[1],
+        lng: wish.location.coordinates[0]
+      }
+    });
+    marker.addListener('click', () => {
+      const endpoint = `/${place._id}`;
+      window.location = endpoint;
+    });
+  }
+  }
+</script>
+
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>
