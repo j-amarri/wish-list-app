@@ -5,9 +5,13 @@
 <h3>Your details</h3>
 <p>{{user.status}}</p>
 <p>{{user.email}}</p>
-<a href="/profile/{{user.id}}/edit">
-  <button>Edit your details</button>
-</a>
+
+{{#if isOwner}}
+  <a href="/profile/{{user.id}}/edit">
+    <button>Edit your details</button>
+  </a>
+{{/if }}
+
 
 <h3>Your wishes</h3>
 {{#each wish}}
