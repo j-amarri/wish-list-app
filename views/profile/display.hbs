@@ -29,9 +29,12 @@
     });
     const whishes = {{{ json wish }}};
     for (let wish of whishes) {
-      const contentString = `<h1>Great title</h1>`
+      const contentString = `
+      <a href="/wish/${ wish._id }"><p>${ wish.title }</p></a>
+      `
       const infoWindow = new window.google.maps.InfoWindow({
-        content: contentString
+        content: contentString,
+        maxWidth: 200
       });
       const marker = new window.google.maps.Marker({
         map,

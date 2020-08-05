@@ -35,6 +35,13 @@
     });
     const whishes = {{{ json data }}};
   for (let wish of whishes) {
+    const contentString = `
+      <a href="/wish/${ wish._id }"><p>${ wish.title }</p></a>
+      `
+      const infoWindow = new window.google.maps.InfoWindow({
+        content: contentString,
+        maxWidth: 200
+      });
     const marker = new window.google.maps.Marker({
       map,
       position: {
@@ -43,6 +50,7 @@
       }
     });
     marker.addListener('click', () => {
+      infoWindow.open(map, marker);
       const endpoint = `/${place._id}`;
       window.location = endpoint;
     });
