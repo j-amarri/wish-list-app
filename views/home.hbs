@@ -10,11 +10,11 @@
       {{!-- <div class="map-small"></div> --}}
     {{#if complete}}
       <form action="/home/{{ _id }}/incomplete" method="POST">
-        <input type="submit" name="status" value="Mark as NOT done"></input>
+        <button>Mark as NOT done</button>
       </form>
     {{else}}
-      <form action="/home/{{ _id }}/complete" method="POST">
-        <input type="submit" name="status" value="Mark as done"></input>
+      <form action="/home/{{ _id }}/congratulations" method="GET">
+        <button>Marks as done</button>
       </form>
     {{/if}}
 

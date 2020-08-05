@@ -39,6 +39,14 @@ const schema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
+    experience: {
+      type: String,
+      minlength: 3,
+      maxlength: 280
+    },
+    rating: {
+      type: Number
+    },
     public: {
       type: Boolean,
       default: true
