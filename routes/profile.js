@@ -3,10 +3,20 @@
 const User = require('./../models/user');
 const Wish = require('./../models/wish');
 
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const multerStorageCloudinary = require('multer-storage-cloudinary');
+
 const { Router } = require('express');
 const router = new Router();
 
 const routeGuard = require('./../middleware/route-guard');
+
+//Save the files in Cloudinary
+const storage = new multerStorageCloudinary.CloudinaryStorage({
+  cloudinary: cloudinary.v2
+});
+const upload = multer({ storage });
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
@@ -41,16 +51,25 @@ router.get('/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.post('/:id/edit', routeGuard, (req, res, next) => {
-  const id = req.params.id;
-  const { name, email } = req.body;
-  User.findByIdAndUpdate(id, { name, email })
-    .then(() => {
-      res.redirect('/home');
-    })
-    .catch(err => {
-      next(err);
-    });
-});
+router.post(
+  '/:id/edit',
+  routeGuard,
+  upload.single('photo'),
+  (req, res, next) => {
+    const id = req.params.id;
+    const { name, email } = req.body;
+    User.findByIdAndUpdate(id, { name, email })
+      .then(() => {
+        res.redirect(`/profile/${id}`);
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+);
+
+const helloWorld = hello => {
+  console.log('My name is');
+};
 
 module.exports = router;

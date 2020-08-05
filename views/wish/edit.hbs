@@ -3,7 +3,7 @@
 
 <form method="POST">
   <input name="title" value="{{ wish.title }}"></textarea>
-  <input name="description" value="{{ wish.description }}"></input>
+  <input name="description" value="{{ wish.description }}" placeholder="Description" </input>
 
   <label for="category-select">Your wish category</label>
   <select name="category" id="category-select">
@@ -31,10 +31,10 @@
   </div>
 
   <div class="wish-coordinates">
-    <input id="latitude-input" type="text" name="latitude" placeholder="latitude" >
+    <input id="latitude-input" type="text" name="latitude" placeholder="latitude">
     <input id="longitude-input" type="text" name="longitude" placeholder="longitude">
   </div>
-  
+
   <div id="map-single"></div>
 
   <button>Edit your wish</button>
@@ -43,42 +43,42 @@
 
 
 <script>
-  function init () {
+  function init() {
     const mapContainerElement = document.getElementById('map-single');
     const map = new window.google.maps.Map(mapContainerElement, {
       center: {
         lat: {{ wish.location.coordinates.[1] }},
-        lng: {{ wish.location.coordinates.[0] }}
+  lng: { { wish.location.coordinates.[0] } }
       },
-      zoom: 6
+  zoom: 6
     });
-    let marker = new window.google.maps.Marker({
+  let marker = new window.google.maps.Marker({
     map,
     position: {
       lat: {{ wish.location.coordinates.[1] }},
-      lng: {{ wish.location.coordinates.[0] }}
+  lng: { { wish.location.coordinates.[0] } }
     }
   });
-    const latitudeInputElement = document.getElementById('latitude-input');
-    const longitudeInputElement = document.getElementById('longitude-input');
-    map.addListener('click', event => {
-      const latitude = event.latLng.lat();
-      const longitude = event.latLng.lng();
-      if (marker) {
-        marker.setMap(null);
+  const latitudeInputElement = document.getElementById('latitude-input');
+  const longitudeInputElement = document.getElementById('longitude-input');
+  map.addListener('click', event => {
+    const latitude = event.latLng.lat();
+    const longitude = event.latLng.lng();
+    if (marker) {
+      marker.setMap(null);
+    }
+    marker = new window.google.maps.Marker({
+      map,
+      position: {
+        lat: latitude,
+        lng: longitude
       }
-      marker = new window.google.maps.Marker({
-        map,
-        position: {
-          lat: latitude,
-          lng: longitude
-        }
-      });
-      latitudeInputElement.value = latitude;
-      longitudeInputElement.value = longitude;
     });
+    latitudeInputElement.value = latitude;
+    longitudeInputElement.value = longitude;
+  });
   }
 </script>
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>
-
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>

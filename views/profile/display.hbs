@@ -1,5 +1,7 @@
 <h1>{{user.name}}</h1>
 
+<img src="https://res.cloudinary.com/dprjjpxak/image/upload/v1596617608/wbad1mg4wu8tokryhrdo.jpg" alt="{{user.name}}'s Profile Picture">
+
 <h3>Your details</h3>
 <p>{{user.status}}</p>
 <p>{{user.email}}</p>
@@ -9,7 +11,7 @@
 
 <h3>Your wishes</h3>
 {{#each wish}}
-  <p>{{this.title}}</p>
+<p>{{this.title}}</p>
 {{/each}}
 
 <h3>Your wishes in the world</h3>
@@ -42,4 +44,5 @@
   }
 </script>
 
-<script defer src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>
+<script defer
+  src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>
