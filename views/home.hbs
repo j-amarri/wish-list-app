@@ -5,7 +5,19 @@
       <a href="/wish/{{ _id }}"><h3>{{ title }}</h3></a>
       <p>{{ description }}</p>
       <span>{{ category }}</span>
-      <div class="map-small"></div>
+
+
+      {{!-- <div class="map-small"></div> --}}
+    {{#if complete}}
+      <form action="/home/{{ _id }}/incomplete" method="POST">
+        <input type="submit" name="status" value="Mark as NOT done"></input>
+      </form>
+    {{else}}
+      <form action="/home/{{ _id }}/complete" method="POST">
+        <input type="submit" name="status" value="Mark as done"></input>
+      </form>
+    {{/if}}
+
     </div>
   {{/each}}
 </div>

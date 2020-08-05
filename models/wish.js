@@ -35,6 +35,10 @@ const schema = new mongoose.Schema(
       ],
       default: 'Other'
     },
+    complete: {
+      type: Boolean,
+      default: false
+    },
     public: {
       type: Boolean,
       default: true
