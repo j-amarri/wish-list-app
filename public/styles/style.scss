@@ -70,7 +70,8 @@ form {
 }
 
 input,
-textarea {
+textarea,
+button {
   padding: 1em;
   border: 1px solid $grey;
   border-radius: 0;
@@ -92,7 +93,7 @@ textarea {
 }
 
 .card-img-top {
-  height: 30%;
+  height: 10%;
 }
 
 /* ----- MAP ----- */

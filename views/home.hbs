@@ -1,5 +1,8 @@
 <h1>Welcome to your wishes!</h1>
-<div class="wish-list">
+<form action="/wish/create">
+  <button>Add your wish</button>
+</form> 
+<div class="container">
   {{#each wishes}}
     <div class="card">
       <a href="/wish/{{ _id }}">
@@ -31,18 +34,8 @@
   {{/each}}
 </div>
 
-{{!--     <div class="wish">
-      <a href="/wish/{{ _id }}"><h3>{{ title }}</h3></a>
-      <span>{{ category }}</span> --}}
 
-      {{#if hasOwnPicture}}
-        <img src="{{wishPicture}}" alt="{{ title }} picture">
-      {{else }}
-        <img src="{{ wishPicture }}{{ category }}" alt="{{ category }} picture">
-      {{/if }}
 
     
 
-<form action="/wish/create">
-  <button>Add your wish</button>
-</form>
+
