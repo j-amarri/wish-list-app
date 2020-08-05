@@ -28,21 +28,29 @@
       zoom: 1
     });
     const whishes = {{{ json wish }}};
-  for (let wish of whishes) {
-    const marker = new window.google.maps.Marker({
-      map,
-      position: {
-        lat: wish.location.coordinates[1],
-        lng: wish.location.coordinates[0]
-      }
-    });
-    marker.addListener('click', () => {
+    for (let wish of whishes) {
+      const contentString = `<h1>Great title</h1>`
+      const infoWindow = new window.google.maps.InfoWindow({
+        content: contentString
+      });
+      const marker = new window.google.maps.Marker({
+        map,
+        position: {
+          lat: wish.location.coordinates[1],
+          lng: wish.location.coordinates[0]
+        }
+      });
+      marker.addListener('click', () => {
+      infoWindow.open(map, marker);
       const endpoint = `/${place._id}`;
       window.location = endpoint;
-    });
-  }
+      });
+    } 
   }
 </script>
 
 <script defer
   src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script>
+
+
+  
