@@ -61,6 +61,10 @@
   });
   const latitudeInputElement = document.getElementById('latitude-input');
   const longitudeInputElement = document.getElementById('longitude-input');
+
+  latitudeInputElement.value = {{ wish.location.coordinates.[1] }};
+  longitudeInputElement.value = {{ wish.location.coordinates.[0] }};
+
   map.addListener('click', event => {
     const latitude = event.latLng.lat();
     const longitude = event.latLng.lng();
