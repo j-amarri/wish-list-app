@@ -17,7 +17,9 @@
 </form>
 
 {{#each data}}
-<p>{{this.title}}</p>
+<h3>{{this.title}}</h3>
+<a href="/profile/{{this.creator._id}}">{{this.creator.name}}</h5></a><h5>
+<img src="{{this.wishPicture}}" alt="{{this.title}} picture">
 {{/each }}
 
 <h3>Wishes map by category</h3>

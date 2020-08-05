@@ -11,6 +11,7 @@ router.get('/', routeGuard, (req, res, next) => {
   const token = req.query.token;
 
   Wish.find({ category: token })
+    .populate('creator')
     .then(data => {
       console.log(data);
       res.render('explore/display', { data });
