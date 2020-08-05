@@ -26,6 +26,7 @@ router.get('/:id', (req, res, next) => {
   User.findById(id)
     .then(data => {
       user = data;
+      console.log(user);
       if (session.user === id) {
         return Wish.find({ creator: id });
       } else {
@@ -57,8 +58,10 @@ router.post(
   upload.single('photo'),
   (req, res, next) => {
     const id = req.params.id;
+    const url = req.file.path;
     const { name, email } = req.body;
-    User.findByIdAndUpdate(id, { name, email })
+
+    User.findByIdAndUpdate(id, { name, email, profilePhoto: url })
       .then(() => {
         res.redirect(`/profile/${id}`);
       })

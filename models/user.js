@@ -17,6 +17,11 @@ const schema = new mongoose.Schema({
   passwordHash: {
     type: String
   },
+  profilePhoto: {
+    type: String,
+    default:
+      'https://res.cloudinary.com/dprjjpxak/image/upload/v1596622972/person_wfngle.png'
+  },
   confirmationToken: {
     type: String,
     unique: true
