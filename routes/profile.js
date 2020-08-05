@@ -20,12 +20,17 @@ const upload = multer({ storage });
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
+  console.log(req.session);
 
+  const accountOwner = id === req.session.user;
+  console.log('Compares session and user profile, boolean', accountOwner);
   const session = req.session;
   let user;
   User.findById(id)
     .then(data => {
+      console.log(data);
       user = data;
+
       if (session.user === id) {
         return Wish.find({ creator: id });
       } else {
@@ -33,7 +38,18 @@ router.get('/:id', (req, res, next) => {
       }
     })
     .then(wish => {
-      res.render('profile/display', { user, wish, session });
+      console.log('here is the object available in the render file', {
+        user,
+        wish,
+        session,
+        isOwner: accountOwner
+      });
+      res.render('profile/display', {
+        user,
+        wish,
+        session,
+        isOwner: accountOwner
+      });
     })
     .catch(err => {
       next(err);
