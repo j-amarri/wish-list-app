@@ -3,8 +3,11 @@
   <button>Add your wish</button>
 </form> 
 <div class="container">
-  {{#each wishes}}
-    <div class="card">
+  <div class="row">
+    {{#each wishes}}
+    <div class="col-6">
+        
+    <div class="card card-width-custom">
       <a href="/wish/{{ _id }}">
 
       {{#if hasOwnPicture}}
@@ -31,7 +34,11 @@
       </div>
       </a>
     </div>
+    </div>
   {{/each}}
+    
+    
+  </div>
 </div>
 
 

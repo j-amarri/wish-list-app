@@ -76,6 +76,9 @@ textarea {
 .card-img-top {
   height: 10%; }
 
+.card-width-custom {
+  width: 100%; }
+
 /* ----- MAP ----- */
 #map-single {
   width: 100%;

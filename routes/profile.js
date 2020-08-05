@@ -58,9 +58,14 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
+  const user = req.session.user;
   User.findById(id)
     .then(data => {
-      res.render('profile/edit', { data });
+      if (id === user) {
+        res.render('profile/edit', { data });
+      } else {
+        res.redirect(`/profile/${user}/edit`);
+      }
     })
     .catch(err => {
       next(err);
