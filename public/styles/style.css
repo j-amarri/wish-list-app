@@ -55,9 +55,7 @@ form {
   flex-direction: column; }
 
 input,
-textarea,
-button,
-.btn {
+textarea {
   padding: 1em;
   border: 1px solid rgba(191, 191, 191, 0.5);
   border-radius: 0;
@@ -69,6 +67,13 @@ button,
 textarea {
   min-height: 8em;
   resize: vertical; }
+
+/* ----- CARDS ----- */
+.card {
+  width: 50%; }
+
+.card-img-top {
+  height: 30%; }
 
 /* ----- MAP ----- */
 #map-single {

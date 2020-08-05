@@ -1,10 +1,39 @@
 <h1>Welcome to your wishes!</h1>
 <div class="wish-list">
   {{#each wishes}}
-    <div class="wish">
+    <div class="card">
+      <a href="/wish/{{ _id }}">
+
+      {{#if hasOwnPicture}}
+        <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
+      {{else }}
+        <img class="card-img-top" src="{{ wishPicture }}{{ category }}" alt="Wish placeholder picture">
+      {{/if }}
+
+      <div class="card-body">
+        <h5 class="card-title">{{ title }}</h5>
+        <p class="card-category">{{ category }}</p>
+        <p class="card-text">{{ description }}</p>
+        
+        {{#if complete}}
+          <form action="/home/{{ _id }}/incomplete" method="POST">
+            <button class="btn btn-primary">Mark as NOT done</button>
+          </form>
+        {{else}}
+          <form action="/home/{{ _id }}/congratulations" method="GET">
+            <button class="btn btn-primary">Marks as done</button>
+          </form>
+        {{/if}}
+
+      </div>
+      </a>
+    </div>
+  {{/each}}
+</div>
+
+{{!--     <div class="wish">
       <a href="/wish/{{ _id }}"><h3>{{ title }}</h3></a>
-      <p>{{ description }}</p>
-      <span>{{ category }}</span>
+      <span>{{ category }}</span> --}}
 
       {{#if hasOwnPicture}}
         <img src="{{wishPicture}}" alt="{{ title }} picture">
@@ -12,46 +41,8 @@
         <img src="{{ wishPicture }}{{ category }}" alt="{{ category }} picture">
       {{/if }}
 
+    
 
-      {{!-- <div class="map-small"></div> --}}
-    {{#if complete}}
-      <form action="/home/{{ _id }}/incomplete" method="POST">
-        <button>Mark as NOT done</button>
-      </form>
-    {{else}}
-      <form action="/home/{{ _id }}/congratulations" method="GET">
-        <button>Marks as done</button>
-      </form>
-    {{/if}}
-
-    </div>
-  {{/each}}
-</div>
 <form action="/wish/create">
   <button>Add your wish</button>
 </form>
-
-
-{{!-- <script>
-  function init () {
-    const mapContainerElement = document.getElementById('map-small');
-    const map = new window.google.maps.Map(mapContainerElement, {
-      center: {
-        lat: {{ wish.location.coordinates.[1] }},
-        lng: {{ wish.location.coordinates.[0] }}
-      },
-      zoom: 6
-    });
-// const longitude = {{ wish.location.coordinates.[1] }};
-// const latitude = {{ wish.location.coordinates.[0] }};
-// const marker = new window.google.maps.Marker({
-//   map,
-//   position: {
-//     lat: {{ wish.location.coordinates.[1] }},
-//     lng: {{ wish.location.coordinates.[0] }}
-//   }
-// });
-// }
-</script>
-
-<script defer src="https://maps.googleapis.com/maps/api/js?key={{ environmentVariables.GOOGLE_MAPS_API_KEY }}&callback=init"></script> --}}
