@@ -1,5 +1,7 @@
 $font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$grey: hsla(0, 0, 75%, 0.5);
+$grey: hsla(40, 0%, 81%, 0.87);
+
+$prime-color: rgb(156, 125, 24);
 
 * {
   &,
@@ -10,9 +12,9 @@ $grey: hsla(0, 0, 75%, 0.5);
 }
 
 body {
-  width: 90%;
+  width: 100%;
   max-width: 52em;
-  padding: 0 1em;
+  padding: 0;
   margin: 0 auto;
   font-family: sans-serif;
   font-family: $font-sans;
@@ -24,8 +26,14 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 nav {
+  width: 90%;
   display: flex;
+  margin: auto;
   a,
   button {
     padding: 1em 0;
@@ -129,9 +137,41 @@ textarea {
 
 /* ----- HOME PAGE ----- */
 .home-page {
+  width: 90%;
+  margin: 0 auto;
   h1 {
     font-size: 1rem;
     font-weight: 600;
+  }
+  .add-wish-container {
+    width: 100%;
+
+    padding: 1.25rem 0;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+
+    form {
+      width: 100%;
+      button {
+        border-radius: 0.5rem;
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        border: solid 2px;
+        background-color: #fff;
+        font-weight: 600;
+      }
+
+      button:hover {
+        border: solid 2px $prime-color;
+        color: $prime-color;
+      }
+    }
   }
 }
 
@@ -143,8 +183,52 @@ textarea {
   height: 10%;
 }
 
-.card-width-custom {
+.card-custom {
   width: 100%;
+  margin: 0;
+  border-radius: 1rem;
+  img {
+    width: 100%;
+    max-height: 200px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .card-body {
+    border-radius: 1rem;
+    padding: 20px 0 10px 0;
+    h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0 20px;
+    }
+
+    p {
+      padding: 0 20px;
+      font-size: 0.8rem;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0.2rem 0;
+        width: 90%;
+        color: #3fb97c;
+        border: 2px solid #3fb97c;
+        background-color: #fff;
+      }
+
+      button:hover {
+        color: #fff;
+        background-color: #3fb97c;
+      }
+    }
+  }
 }
 
 /* ----- MAP ----- */

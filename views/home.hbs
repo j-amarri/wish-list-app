@@ -2,47 +2,53 @@
   <h1 class="mt-3 ">Welcome to your wishes!</h1>
 
   {{!-- {{Bootstrap with responsive columns}} --}}
-  <a href="/wish/create">
-    <button>Add your wish</button>
-  </a> 
+  <div class="add-wish-container">
+    <form action="/wish/create">
+      <button>Add wish</button>
+    </form> 
+  </div>
+  
 
 
 
   {{!-- {{Bootstrap with responsive columns}} --}}
   {{!-- {{Bootstrap with responsive columns}} --}}
   {{!-- {{Bootstrap with responsive columns}} --}}
+  {{!-- {{Bootstrap with responsive columns}} --}}
+  {{!-- {{Bootstrap with responsive columns}} --}}
+
   <div class="container">
     <div class="row">
       {{#each wishes}}
-      <div class="col-6 col-md-4 col-lg-3">
-          
-      <div class="card card-width-custom">
-        <a href="/wish/{{ _id }}">
+      <div class="col-6 col-md-4 col-lg-3 card-container-custom">
+  
+        <div class="card card-custom">
+          <a href="/wish/{{ _id }}">
 
-        {{#if hasOwnPicture}}
-          <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
-        {{else }}
-          <img class="card-img-top" src="{{ wishPicture }}{{ category }}" alt="Wish placeholder picture">
-        {{/if }}
+          {{#if hasOwnPicture}}
+            <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
+          {{else }}
+            <img class="card-img-top" src="{{ wishPicture }}{{ category }}" alt="Wish placeholder picture">
+          {{/if }}
 
-        <div class="card-body">
-          <h5 class="card-title">{{ title }}</h5>
-          <p class="card-category">{{ category }}</p>
-          <p class="card-text">{{ description }}</p>
-          
-          {{#if complete}}
-            <form action="/home/{{ _id }}/incomplete" method="POST">
-              <button class="btn btn-primary">Mark as NOT done</button>
-            </form>
-          {{else}}
-            <form action="/home/{{ _id }}/congratulations" method="GET">
-              <button class="btn btn-primary">Marks as done</button>
-            </form>
-          {{/if}}
+          <div class="card-body">
+            <h5 class="card-title">{{ title }}</h5>
+            <p class="card-category">{{ category }}</p>
 
+            
+            {{#if complete}}
+              <form action="/home/{{ _id }}/incomplete" method="POST">
+                <button class="btn btn-primary">Undo</button>
+              </form>
+            {{else}}
+              <form action="/home/{{ _id }}/congratulations" method="GET">
+                <button class="btn btn-primary">Complete</button>
+              </form>
+            {{/if}}
+
+          </div>
+          </a>
         </div>
-        </a>
-      </div>
       </div>
     {{/each}}        
     </div>
