@@ -52,7 +52,7 @@ router.post('/sign-up', (req, res, next) => {
       user = document;
       transport.sendMail({
         from: process.env.NODEMAILER_EMAIL,
-        to: process.env.NODEMAILER_EMAIL,
+        to: document.email,
         subject: 'Please verify your email to activate your account',
         html: `
         <html>

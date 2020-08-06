@@ -34,7 +34,8 @@ nav {
     display: flex;
     list-style: none;
     padding: 2rem 0;
-    justify-content: space-evenly; }
+    padding-top: 3rem;
+    justify-content: space-between; }
     nav ul li {
       padding-left: 0; }
       nav ul li a,
@@ -96,7 +97,7 @@ textarea {
   min-height: 8em;
   resize: vertical; }
 
-/* ----- CARDS ----- */
+/* ----- HOME PAGE ----- */
 .home-page h1 {
   font-size: 1rem;
   font-weight: 600; }
