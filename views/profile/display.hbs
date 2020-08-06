@@ -1,23 +1,29 @@
-<h1>{{user.name}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <img src={{user.profilePhoto}} alt="{{user.name}}'s Profile photo">
+    </div>
+    <div class="col">
+      <h3>{{user.name}}</h1>
+      {{#if isOwner}}
+        <a href="/profile/{{user.id}}/edit">
+          <button class="btn btn-primary">Edit profile</button>
+        </a>
+      {{/if }}
+    </div>
+  </div>
+  <div class="row mt-3">
+    <h5>{{ user.name }}'s wishes in the world</h5>
+    <div class="mt-1" id="map-single"></div>
+  </div>
+  <div class="row mb-3">
+    <h5>{{ user.name }}'s wishes</h5>
+    {{#each wish}}
+    <p>{{this.title}}</p>
+    {{/each}}
+  </div>
+</div>
 
-<img src={{user.profilePhoto}} alt="{{user.name}}'s Profile photo">
-
-<h3>Your details</h3>
-
-{{#if isOwner}}
-  <a href="/profile/{{user.id}}/edit">
-    <button>Edit your details</button>
-  </a>
-{{/if }}
-
-
-<h3>Your wishes</h3>
-{{#each wish}}
-<p>{{this.title}}</p>
-{{/each}}
-
-<h3>Your wishes in the world</h3>
-<div id="map-single"></div>
 
 <script>
   function init() {

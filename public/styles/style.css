@@ -2,13 +2,15 @@
   box-sizing: border-box; }
 
 body {
-  width: 90%;
+  width: 100%;
   max-width: 52em;
-  padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 2; }
+
+.container {
+  width: 90%; }
 
 a {
   color: inherit;
@@ -26,15 +28,6 @@ nav {
     nav a:first-child,
     nav button:first-child {
       margin-right: auto; }
-<<<<<<< HEAD
-  nav > button {
-    margin: 0 !important; }
-||||||| merged common ancestors
-  nav > button {
-    margin: 0 !important; }
-  nav form {
-    margin: 0; }
-=======
   nav button {
     margin: 0;
     padding: 0; }
@@ -62,7 +55,6 @@ nav {
       nav ul li button:focus {
         outline: none;
         box-shadow: none; }
->>>>>>> 8504ef8d4be3fe679c3e2eea5bf553d47a808d0e
 
 h1,
 h2,
@@ -131,5 +123,8 @@ textarea {
   display: none; }
 
 /* ----- SINGLE WISH ------ */
+/* ----- PROFILE PAGE ------  */
+.background {
+  background-color: coral; }
 
 /*# sourceMappingURL=style.css.map */

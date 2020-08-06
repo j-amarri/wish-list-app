@@ -10,13 +10,16 @@ $grey: hsla(0, 0, 75%, 0.5);
 }
 
 body {
-  width: 90%;
+  width: 100%;
   max-width: 52em;
-  padding: 0 1em;
   margin: 0 auto;
   font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
+}
+
+.container {
+  width: 90%;
 }
 
 a {
@@ -162,4 +165,10 @@ textarea {
 /* ----- SINGLE WISH ------ */
 
 .category-tag {
+}
+
+/* ----- PROFILE PAGE ------  */
+
+.background {
+  background-color: coral;
 }
