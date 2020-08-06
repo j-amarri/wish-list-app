@@ -1,32 +1,37 @@
-<h1>{{ wish.title }}</h1>
-<h5>{{ wish.category }}</h5>
-<div class="category-tag">
-  <p>{{ wish.private }}</p>
-</div>
+<section class="single-wish">
+  <div class="title-container">
+    <h1>{{ wish.title }}</h1>
+    <h5>{{ wish.category }}</h5>
+  </div>
+  
+  <hr>
 
-<hr>
+  
+  <div class="description-container">
+    {{#if wish.hasOwnPicture}}
+    <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
+     {{else }}
+     <img src="{{ wish.wishPicture }}{{ wish.category }}" alt="{{ wish.category }} picture">
+     {{/if }}
+     <p>{{ wish.description}}</p>
+  </div>
+  
 
-<p>{{ wish.description}}</p>
+  <div id="map-single"></div>
 
-{{#if wish.hasOwnPicture}}
-  <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
-{{else }}
-  <img src="{{ wish.wishPicture }}{{ wish.category }}" alt="{{ wish.category }} picture">
-{{/if }}
+  {{#if isOwner}}
+  <div class="buttons-container">
+    <a href="/wish/{{ wish._id }}/edit">  
+      <button>Edit</button>
+    </a>
 
-<div id="map-single"></div>
-
-{{#if isOwner}}
-
-<a href="/wish/{{ wish._id }}/edit">  
-  <button>Edit your wish</button>
-</a>
-
-<form action="/wish/{{ wish._id }}/delete" method="POST">
-  <button>Delete your wish</button>
-</form>
-
-{{/if}}
+    <form action="/wish/{{ wish._id }}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+  </div>
+  
+  {{/if}}
+</section>
 
 
 
