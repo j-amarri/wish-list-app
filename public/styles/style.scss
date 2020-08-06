@@ -295,6 +295,7 @@ textarea {
         border: 2px solid rgba(42, 147, 37, 0.67);
         font-weight: 600;
         color: rgba(42, 147, 37, 0.67);
+        border-radius: 0.4rem;
       }
 
       button:hover {
@@ -318,6 +319,31 @@ textarea {
   }
 }
 
+/* ----- SINGLE WISH EDIT ------  */
+section {
+  width: 90%;
+  margin: auto;
+}
+
+.wish-edit-container {
+  img {
+    width: 100%;
+    border-radius: 0.4rem;
+  }
+
+  .form-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    input,
+    button {
+      width: 47%;
+      border-radius: 0.4rem;
+    }
+  }
+}
+
 /* ----- PROFILE PAGE ------  */
 
 .background {
@@ -327,8 +353,10 @@ textarea {
 /* ----- EXPLORE PAGE ------ */
 
 .form-explore {
-  display: inline-flex;
-  flex-direction: row;
+  display: flex;
 }
 
 /* ----- FOOTER ------ */
+footer {
+  display: flex;
+}
