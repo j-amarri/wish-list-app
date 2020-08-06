@@ -1,11 +1,11 @@
-<h1>Welcome to your wishes!</h1>
+<h1 class="display-4 pt-5">Welcome to your wishes!</h1>
 <form action="/wish/create">
   <button>Add your wish</button>
 </form> 
 <div class="container">
   <div class="row">
     {{#each wishes}}
-    <div class="col-6">
+    <div class="col-6 col-md-4 col-lg-3">
         
     <div class="card card-width-custom">
       <a href="/wish/{{ _id }}">

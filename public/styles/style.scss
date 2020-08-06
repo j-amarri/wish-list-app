@@ -25,6 +25,7 @@ a {
 
 nav {
   display: flex;
+  align-items: center;
   a,
   button {
     padding: 1em 0;
@@ -35,6 +36,10 @@ nav {
     &:first-child {
       margin-right: auto;
     }
+  }
+
+  > button {
+    margin: 0 !important;
   }
 }
 

@@ -14,7 +14,8 @@ a {
   text-decoration: none; }
 
 nav {
-  display: flex; }
+  display: flex;
+  align-items: center; }
   nav a,
   nav button {
     padding: 1em 0;
@@ -25,6 +26,10 @@ nav {
     nav a:first-child,
     nav button:first-child {
       margin-right: auto; }
+  nav > button {
+    margin: 0 !important; }
+  nav form {
+    margin: 0; }
 
 h1,
 h2,
