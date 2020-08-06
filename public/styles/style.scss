@@ -141,14 +141,6 @@ textarea {
   resize: vertical;
 }
 
-/* ----- EXPLORE ---------- */
-
-.row-explore-container {
-  form {
-    display: flex;
-  }
-}
-
 /* ----- HOME PAGE ----- */
 .home-page {
   width: 90%;
@@ -187,62 +179,62 @@ textarea {
       }
     }
   }
-}
 
-.card {
-  width: 50%;
-}
-
-.card-img-top {
-  height: 10%;
-}
-
-.card-custom {
-  width: 100%;
-  margin: 0;
-  border-radius: 1rem;
-  border: transparent;
-  img {
-    width: 100%;
-    max-height: 200px;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  .card {
+    width: 50%;
   }
 
-  .card-body {
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border: 1px solid $grey;
-    padding: 20px 0 10px 0;
-    h5 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 0 20px;
-    }
+  .card-img-top {
+    height: 10%;
+  }
 
-    p {
-      padding: 0 20px;
-      font-size: 0.8rem;
-    }
-
-    form {
+  .card-custom {
+    width: 100%;
+    margin: 0;
+    border-radius: 1rem;
+    border: transparent;
+    img {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      button {
+      max-height: 200px;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+
+    .card-body {
+      border-bottom-right-radius: 1rem;
+      border-bottom-left-radius: 1rem;
+      border: 1px solid $grey;
+      padding: 20px 0 10px 0;
+      h5 {
         font-size: 0.9rem;
-        margin: 0;
-        padding: 0.2rem 0;
-        width: 90%;
-        color: #3fb97c;
-        border: 2px solid #3fb97c;
-        background-color: #fff;
+        font-weight: 600;
+        padding: 0 20px;
       }
 
-      button:hover {
-        color: #fff;
-        background-color: #3fb97c;
+      p {
+        padding: 0 20px;
+        font-size: 0.8rem;
+      }
+
+      form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          font-size: 0.9rem;
+          margin: 0;
+          padding: 0.2rem 0;
+          width: 90%;
+          color: #3fb97c;
+          border: 2px solid #3fb97c;
+          background-color: #fff;
+        }
+
+        button:hover {
+          color: #fff;
+          background-color: #3fb97c;
+        }
       }
     }
   }
@@ -262,6 +254,70 @@ textarea {
 
 /* ----- SINGLE WISH ------ */
 
+.single-wish {
+  width: 90%;
+  margin: 0 auto;
+
+  .title-container {
+    h1 {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    h5 {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+
+  .description-container {
+    img {
+      width: 100%;
+      border-radius: 0.4rem;
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+
+  #map-single {
+    border-radius: 0.4rem;
+  }
+
+  .buttons-container {
+    display: flex;
+    a,
+    form {
+      width: 50%;
+      button {
+        width: 95%;
+        border: 2px solid rgba(42, 147, 37, 0.67);
+        font-weight: 600;
+        color: rgba(42, 147, 37, 0.67);
+      }
+
+      button:hover {
+        background-color: rgba(42, 147, 37, 0.67);
+        border: #fff;
+        color: #fff;
+      }
+    }
+    form {
+      button {
+        border: 2px solid rgba(147, 37, 37, 0.7);
+        color: rgba(147, 37, 37, 0.7);
+      }
+
+      button:hover {
+        background-color: rgba(147, 37, 37, 0.7);
+        border: #fff;
+        color: #fff;
+      }
+    }
+  }
+}
+
 /* ----- PROFILE PAGE ------  */
 
 .background {
@@ -273,3 +329,5 @@ textarea {
 .form-explore {
   display: flex;
 }
+
+/* ----- FOOTER ------ */
