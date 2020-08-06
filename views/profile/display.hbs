@@ -16,11 +16,13 @@
     <h5>{{ user.name }}'s wishes in the world</h5>
     <div class="mt-1" id="map-single"></div>
   </div>
-  <div class="row mb-3">
-    <h5>{{ user.name }}'s wishes</h5>
-    {{#each wish}}
-    <p>{{this.title}}</p>
-    {{/each}}
+  <div class="row">
+    <div class="col">
+      <h5>{{ user.name }}'s wishes</h5>
+      {{#each wish}}
+      <p>{{this.title}}</p>
+      {{/each}}
+    </div>
   </div>
 </div>
 
