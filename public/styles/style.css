@@ -2,6 +2,7 @@
   box-sizing: border-box; }
 
 body {
+  width: 90%;
   max-width: 52em;
   padding: 0 1em;
   margin: 0 auto;
@@ -14,8 +15,7 @@ a {
   text-decoration: none; }
 
 nav {
-  display: flex;
-  align-items: center; }
+  display: flex; }
   nav a,
   nav button {
     padding: 1em 0;
@@ -26,8 +26,43 @@ nav {
     nav a:first-child,
     nav button:first-child {
       margin-right: auto; }
+<<<<<<< HEAD
   nav > button {
     margin: 0 !important; }
+||||||| merged common ancestors
+  nav > button {
+    margin: 0 !important; }
+  nav form {
+    margin: 0; }
+=======
+  nav button {
+    margin: 0;
+    padding: 0; }
+  nav ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    padding: 2rem 0;
+    padding-top: 3rem;
+    justify-content: space-between; }
+    nav ul li {
+      padding-left: 0; }
+      nav ul li a,
+      nav ul li button {
+        font-size: 1rem;
+        font-weight: 500; }
+      nav ul li a:hover {
+        color: #9c7d18;
+        text-decoration: none;
+        border-bottom: solid 2px #9c7d18; }
+      nav ul li button {
+        color: #b85454; }
+      nav ul li button:hover {
+        border-bottom: solid 2px #b85454; }
+      nav ul li button:focus {
+        outline: none;
+        box-shadow: none; }
+>>>>>>> 8504ef8d4be3fe679c3e2eea5bf553d47a808d0e
 
 h1,
 h2,
@@ -72,7 +107,11 @@ textarea {
   min-height: 8em;
   resize: vertical; }
 
-/* ----- CARDS ----- */
+/* ----- HOME PAGE ----- */
+.home-page h1 {
+  font-size: 1rem;
+  font-weight: 600; }
+
 .card {
   width: 50%; }
 

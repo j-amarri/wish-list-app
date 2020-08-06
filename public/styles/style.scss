@@ -10,6 +10,7 @@ $grey: hsla(0, 0, 75%, 0.5);
 }
 
 body {
+  width: 90%;
   max-width: 52em;
   padding: 0 1em;
   margin: 0 auto;
@@ -25,7 +26,6 @@ a {
 
 nav {
   display: flex;
-  align-items: center;
   a,
   button {
     padding: 1em 0;
@@ -38,8 +38,44 @@ nav {
     }
   }
 
-  > button {
-    margin: 0 !important;
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    padding: 2rem 0;
+    padding-top: 3rem;
+    justify-content: space-between;
+
+    li {
+      padding-left: 0;
+      a,
+      button {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+
+      a:hover {
+        color: rgb(156, 125, 24);
+        text-decoration: none;
+        border-bottom: solid 2px rgb(156, 125, 24);
+      }
+      button {
+        color: rgb(184, 84, 84);
+      }
+      button:hover {
+        border-bottom: solid 2px rgb(184, 84, 84);
+      }
+
+      button:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
   }
 }
 
@@ -91,7 +127,13 @@ textarea {
   resize: vertical;
 }
 
-/* ----- CARDS ----- */
+/* ----- HOME PAGE ----- */
+.home-page {
+  h1 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
 
 .card {
   width: 50%;
