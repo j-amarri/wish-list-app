@@ -20,7 +20,6 @@ body {
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
   line-height: 2;
-  padding-bottom: 76px;
 }
 
 .container {
@@ -80,6 +79,7 @@ nav {
       }
       button {
         color: rgb(184, 84, 84);
+        padding-bottom: 0.5rem;
       }
       button:hover {
         border-bottom: solid 2px rgb(184, 84, 84);
@@ -139,6 +139,14 @@ button {
 textarea {
   min-height: 8em;
   resize: vertical;
+}
+
+/* ----- EXPLORE ---------- */
+
+.row-explore-container {
+  form {
+    display: flex;
+  }
 }
 
 /* ----- HOME PAGE ----- */
