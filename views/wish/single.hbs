@@ -1,6 +1,11 @@
 <h1>{{ wish.title }}</h1>
 <h5>{{ wish.category }}</h5>
-<h5>{{ wish.private }}</h5>
+<div class="category-tag">
+  <p>{{ wish.private }}</p>
+</div>
+
+<hr>
+
 <p>{{ wish.description}}</p>
 
 {{#if wish.hasOwnPicture}}
@@ -11,16 +16,20 @@
 
 <div id="map-single"></div>
 
-<a href="/wish/{{ wish._id }}/edit">  
-  <button>Edit your wish</button>
-</a>
-
-
-
-
-<form action="/wish/{{ wish._id }}/delete" method="POST">
-  <button>Delete your wish</button>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <a href="/wish/{{ wish._id }}/edit">  
+        <button>Edit your wish</button>
+      </a>
+    </div>
+    <div class="col-sm">
+      <form action="/wish/{{ wish._id }}/delete" method="POST">
+        <button>Delete your wish</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script>
   function init () {
