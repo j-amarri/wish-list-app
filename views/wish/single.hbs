@@ -11,16 +11,19 @@
 
 <div id="map-single"></div>
 
+{{#if isOwner}}
+
 <a href="/wish/{{ wish._id }}/edit">  
   <button>Edit your wish</button>
 </a>
 
-
-
-
 <form action="/wish/{{ wish._id }}/delete" method="POST">
   <button>Delete your wish</button>
 </form>
+
+{{/if}}
+
+
 
 <script>
   function init () {
