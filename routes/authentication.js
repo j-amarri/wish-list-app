@@ -58,7 +58,7 @@ router.post('/sign-up', (req, res, next) => {
         <html>
         <body>
         <h1>Hi ${user.name}</h1>
-        <a href="http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}">Click here to verify your account: http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}</a>
+        <a href="https://wish-list-project.herokuapp.com/authentication/confirm-email?token=${user.confirmationToken}">Click here to verify your account: http://localhost:3000/authentication/confirm-email?token=${user.confirmationToken}</a>
         </body>
         </html>
         `
