@@ -19,6 +19,7 @@ body {
   font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
+  padding-bottom: 76px;
 }
 
 .container {
@@ -191,6 +192,7 @@ textarea {
   width: 100%;
   margin: 0;
   border-radius: 1rem;
+  border: transparent;
   img {
     width: 100%;
     max-height: 200px;
@@ -199,7 +201,9 @@ textarea {
   }
 
   .card-body {
-    border-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid $grey;
     padding: 20px 0 10px 0;
     h5 {
       font-size: 0.9rem;
