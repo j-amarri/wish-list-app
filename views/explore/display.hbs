@@ -26,32 +26,30 @@
         </div>
   </div>
 
-        </div>
-
-        {{!-- extra section --}}
-        <div class="form-row">
-        <div class=" singlehead form-group col-md-6">
-
-            TEST
-        </div>
-        <div class="mapdiv form-group col-md-6">
-      <div id="map-container"></div>
-      TEST 2
-      
-        </div>
-    </div>
-    {{!-- end extra section --}}
-        
-
   <h5>Wishes map by location</h5>
   <div id="map-single"></div>
 
   {{#each data}}
     {{#if public}}
       {{#unless ownsTheWish}}
-        <a href="/wish/{{this._id}}"><h3>{{this.title}}</h3></a>
-        <a href="/profile/{{this.creator._id}}">{{this.creator.name}}</h5></a><h5>
-        <img src="{{this.wishPicture}}" alt="{{this.title}} picture">
+        <div class="col-6 col-md-4 col-lg-3 my-3">
+      <div class="card card-custom">
+          <a href="/wish/{{ this._id }}">
+
+          {{#if this.hasOwnPicture}}
+            <img class="card-img-top" src="{{ this.wishPicture }}" alt="{{ this.title }} picture">
+          {{else }}
+            <img class="card-img-top" src="{{ this.wishPicture }}{{ this.category }}" alt="Wish placeholder picture">
+          {{/if }}
+
+          <div class="card-body">
+            <h5 class="card-title">{{ this.title }}</h5>
+            <p class="card-category">{{ this.category }}</p>
+          
+          </div>
+          </a>
+      </div>
+    </div>
       {{/unless }}
     {{/if}}
   {{/each }}
