@@ -28,7 +28,6 @@ router.get('/:id', (req, res, next) => {
   let user;
   User.findById(id)
     .then(data => {
-      console.log(data);
       user = data;
 
       if (session.user === id) {

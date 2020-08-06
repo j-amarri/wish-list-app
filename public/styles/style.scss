@@ -14,11 +14,18 @@ $prime-color: rgb(156, 125, 24);
 body {
   width: 100%;
   max-width: 52em;
+<<<<<<< HEAD
   padding: 0;
+=======
+>>>>>>> 50bdc3d0ec2c53d8f0df04fb33b345d9c73db331
   margin: 0 auto;
   font-family: sans-serif;
   font-family: $font-sans;
   line-height: 2;
+}
+
+.container {
+  width: 90%;
 }
 
 a {
@@ -246,4 +253,10 @@ textarea {
 /* ----- SINGLE WISH ------ */
 
 .category-tag {
+}
+
+/* ----- PROFILE PAGE ------  */
+
+.background {
+  background-color: coral;
 }
