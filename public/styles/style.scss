@@ -271,5 +271,6 @@ textarea {
 /* ----- EXPLORE PAGE ------ */
 
 .form-explore {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
 }
