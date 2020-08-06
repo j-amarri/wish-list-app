@@ -13,7 +13,6 @@ router.get('/', routeGuard, (req, res, next) => {
   Wish.find({ category: token })
     .populate('creator')
     .then(data => {
-      console.log(data);
       res.render('explore/display', { data });
     })
     .catch(err => {

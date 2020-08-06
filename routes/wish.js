@@ -45,6 +45,7 @@ wishRouter.post('/create', routeGuard, (req, res, next) => {
 
 wishRouter.post('/:id/delete', routeGuard, (req, res, next) => {
   const id = req.params.id;
+
   Wish.findByIdAndDelete(id)
     .then(() => {
       res.redirect('/home');
@@ -56,10 +57,15 @@ wishRouter.post('/:id/delete', routeGuard, (req, res, next) => {
 
 wishRouter.get('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
+  const user = req.session.user;
 
   Wish.findById(id)
     .then(wish => {
-      res.render('wish/edit', { wish });
+      if (user == wish.creator) {
+        res.render('wish/edit', { wish });
+      } else {
+        res.redirect(`/wish/${id}`);
+      }
     })
     .catch(error => {
       next(error);
@@ -109,9 +115,21 @@ wishRouter.post(
 
 wishRouter.get('/:id', routeGuard, (req, res, next) => {
   const id = req.params.id;
+  const user = req.session.user;
+
   Wish.findById(id)
     .then(wish => {
-      res.render('wish/single', { wish });
+      console.log('wish', wish);
+      console.log('creator', wish.creator);
+      console.log('user in session', user);
+
+      let isOwner = false;
+      if (wish.creator == user) {
+        isOwner = true;
+      }
+
+      console.log('is it my wish', isOwner);
+      res.render('wish/single', { wish, isOwner: isOwner });
     })
     .catch(error => {
       next(error);

@@ -17,9 +17,13 @@
 </form>
 
 {{#each data}}
-<h3>{{this.title}}</h3>
-<a href="/profile/{{this.creator._id}}">{{this.creator.name}}</h5></a><h5>
-<img src="{{this.wishPicture}}" alt="{{this.title}} picture">
+  {{#if public}}
+    {{#unless ownsTheWish}}
+      <a href="/wish/{{this._id}}"><h3>{{this.title}}</h3></a>
+      <a href="/profile/{{this.creator._id}}">{{this.creator.name}}</h5></a><h5>
+      <img src="{{this.wishPicture}}" alt="{{this.title}} picture">
+    {{/unless }}
+  {{/if}}
 {{/each }}
 
 <h3>Wishes map by category</h3>
