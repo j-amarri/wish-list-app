@@ -4,7 +4,7 @@
       <img src={{user.profilePhoto}} alt="{{user.name}}'s Profile photo">
     </div>
     <div class="col">
-      <h3>{{user.name}}</h1>
+      <h3>{{user.name}}</h3>
       {{#if isOwner}}
         <a href="/profile/{{user.id}}/edit">
           <button class="btn btn-primary">Edit profile</button>
@@ -16,13 +16,28 @@
     <h5>{{ user.name }}'s wishes in the world</h5>
     <div class="mt-1" id="map-single"></div>
   </div>
+  <h5>{{ user.name }}'s wishes</h5>
   <div class="row">
-    <div class="col">
-      <h5>{{ user.name }}'s wishes</h5>
-      {{#each wish}}
-      <p>{{this.title}}</p>
-      {{/each}}
+    {{#each wish}}
+    <div class="col-6 col-md-4 col-lg-3 my-3">
+      <div class="card card-custom">
+          <a href="/wish/{{ this._id }}">
+
+          {{#if this.hasOwnPicture}}
+            <img class="card-img-top" src="{{ this.wishPicture }}" alt="{{ this.title }} picture">
+          {{else }}
+            <img class="card-img-top" src="{{ this.wishPicture }}{{ this.category }}" alt="Wish placeholder picture">
+          {{/if }}
+
+          <div class="card-body">
+            <h5 class="card-title">{{ this.title }}</h5>
+            <p class="card-category">{{ this.category }}</p>
+          
+          </div>
+          </a>
+      </div>
     </div>
+    {{/each}}
   </div>
 </div>
 

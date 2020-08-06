@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 $font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $grey: hsla(40, 0%, 81%, 0.87);
 
@@ -16,8 +18,7 @@ body {
   max-width: 52em;
   padding: 0;
   margin: 0 auto;
-  font-family: sans-serif;
-  font-family: $font-sans;
+  font-family: 'Open Sans', sans-serif;
   line-height: 2;
   padding-bottom: 76px;
 }
@@ -257,4 +258,10 @@ textarea {
 
 .background {
   background-color: coral;
+}
+
+/* ----- EXPLORE PAGE ------ */
+
+.form-explore {
+  display: flex;
 }

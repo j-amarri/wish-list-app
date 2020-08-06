@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -6,8 +7,7 @@ body {
   max-width: 52em;
   padding: 0;
   margin: 0 auto;
-  font-family: sans-serif;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 2;
   padding-bottom: 76px; }
 
@@ -192,11 +192,12 @@ textarea {
   display: none; }
 
 /* ----- SINGLE WISH ------ */
-.category-tag {
-  color: black; }
-
 /* ----- PROFILE PAGE ------  */
 .background {
   background-color: coral; }
+
+/* ----- EXPLORE PAGE ------ */
+.form-explore {
+  display: flex; }
 
 /*# sourceMappingURL=style.css.map */
