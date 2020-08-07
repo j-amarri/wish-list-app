@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container wish-edit-container">
 
   {{#if wish.hasOwnPicture}}
     <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
@@ -8,8 +8,6 @@
 
   <form class="my-3 form-img" action="/wish/{{wish._id}}/updatePicture" method="POST" enctype="multipart/form-data">
     <input type="file" name="photo" id="file">
-    {{!-- <p>O sporting sera o maior</p>
-    <p>O sporting sera o maior</p> --}}
     
     <button>Update picture</button>
   </form>

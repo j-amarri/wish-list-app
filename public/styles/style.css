@@ -57,13 +57,13 @@ nav {
         font-size: 1rem;
         font-weight: 500; }
       nav ul li a:hover {
-        color: #9c7d18;
+        color: #ffbe0b;
         text-decoration: none;
-        border-bottom: solid 2px #9c7d18; }
+        border-bottom: solid 2px #ffbe0b; }
       nav ul li button {
         color: #ffbe0b; }
       nav ul li button:hover {
-        border-bottom: solid 2px #b85454; }
+        border-bottom: solid 2px #ffbe0b; }
       nav ul li button:focus {
         outline: none;
         box-shadow: none; }
@@ -175,7 +175,7 @@ textarea {
         color: white;
         font-weight: 600; }
       .home-page .add-wish-container form button:hover {
-        border: solid 2px #ffbe0b;
+        border: solid 3px #ffbe0b;
         color: #ffbe0b; }
 
 .card-custom {
@@ -189,10 +189,9 @@ textarea {
     max-height: 200px;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem; }
+  .card-custom .card-custome-home {
+    height: 100% !important; }
   .card-custom .card-body {
-    border-bottom-right-radius: 1rem;
-    border-bottom-left-radius: 1rem;
-    border: 1px solid rgba(207, 207, 207, 0.87);
     padding: 20px 0 10px 0; }
     .card-custom .card-body h5 {
       font-size: 0.9rem;
@@ -211,12 +210,22 @@ textarea {
         margin: 0;
         padding: 0.2rem 0;
         width: 90%;
-        color: #3fb97c;
-        border: 2px solid #3fb97c;
+        color: #8338ec;
+        border: 2px solid #8338ec;
         background-color: #fff; }
       .card-custom .card-body form button:hover {
         color: #fff;
-        background-color: #3fb97c; }
+        background-color: #8338ec; }
+  .card-custom .card-add-new {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; }
+    .card-custom .card-add-new .card-title {
+      margin: 0 auto;
+      font-size: 2rem;
+      font-weight: 500; }
 
 .private-tag {
   position: absolute;
@@ -242,7 +251,7 @@ textarea {
 /* ----- SINGLE WISH ------ */
 .single-wish {
   width: 90%;
-  margin: 0 auto; }
+  margin: 0 auto 1rem auto; }
   .single-wish .title-container h1 {
     font-size: 1.2rem;
     font-weight: 700; }
@@ -257,56 +266,82 @@ textarea {
   .single-wish #map-single {
     border-radius: 0.4rem; }
   .single-wish .buttons-container {
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
     .single-wish .buttons-container a,
     .single-wish .buttons-container form {
-      width: 50%; }
+      width: 45%; }
       .single-wish .buttons-container a button,
       .single-wish .buttons-container form button {
-        width: 95%;
-        border: 2px solid rgba(42, 147, 37, 0.67);
+        width: 100%;
+        height: 100%;
+        border: 2px solid #8338ec;
         font-weight: 600;
-        color: rgba(42, 147, 37, 0.67);
-        border-radius: 0.4rem; }
+        color: #8338ec;
+        border-radius: 0.4rem;
+        margin: 0; }
       .single-wish .buttons-container a button:hover,
       .single-wish .buttons-container form button:hover {
-        background-color: rgba(42, 147, 37, 0.67);
-        border: #fff;
-        color: #fff; }
+        background-color: #ffbe0b;
+        border-color: #ffbe0b;
+        color: #8338ec; }
+    .single-wish .buttons-container a button {
+      color: #fff;
+      background-color: #8338ec; }
     .single-wish .buttons-container form button {
-      border: 2px solid rgba(147, 37, 37, 0.7);
-      color: rgba(147, 37, 37, 0.7); }
+      border: 2px solid #ffbe0b;
+      color: #ffbe0b; }
     .single-wish .buttons-container form button:hover {
-      background-color: rgba(147, 37, 37, 0.7);
-      border: #fff;
-      color: #fff; }
+      background-color: #ffbe0b;
+      color: #8338ec; }
 
 /* ----- SINGLE WISH EDIT ------  */
 section {
   width: 90%;
   margin: auto; }
 
-.wish-edit-container {
-  padding: 50px; }
-  .wish-edit-container img {
-    width: 100%;
-    border-radius: 0.4rem; }
-  .wish-edit-container .form-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; }
-    .wish-edit-container .form-img input,
-    .wish-edit-container .form-img button {
-      width: 47%;
-      border-radius: 0.4rem; }
+.wish-edit-container img {
+  width: 100%;
+  border-radius: 0.4rem; }
+
+.wish-edit-container .form-img button:hover {
+  background-color: #8338ec;
+  color: #fff; }
+
+/* ----- CONGRATS PAGE ------  */
+.congrats {
+  width: 90%; }
 
 /* ----- PROFILE PAGE ------  */
 .background {
   background-color: coral; }
 
 /* ----- EXPLORE PAGE ------ */
-.form-explore {
-  display: flex; }
+.explore {
+  width: 100%; }
+  .explore .form-explore {
+    width: 100%;
+    margin-bottom: 2rem; }
+    .explore .form-explore .form-container {
+      width: 100%; }
+      .explore .form-explore .form-container form {
+        width: 100%; }
+        .explore .form-explore .form-container form .select-container {
+          width: 100%;
+          padding: 0; }
+          .explore .form-explore .form-container form .select-container select {
+            border: 3px solid #8338ec;
+            padding: 0.5rem 0;
+            color: #8338ec;
+            text-align-last: center;
+            border-radius: 1rem;
+            width: 100%; }
+  .explore .col-custom {
+    padding: 0; }
+    .explore .col-custom button {
+      width: 100%;
+      margin: 0.5rem 0 0 0;
+      padding: 0.5rem; }
 
 /* ----- FOOTER ------ */
 footer {

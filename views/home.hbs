@@ -1,13 +1,9 @@
 <section class="home-page">
-  <h1 class="mt-3">Welcome to Flame Wisher!</h1>
+  <h1 class="pt-3">Welcome to Flame Wisher!</h1>
   <p>Flame throw your wishes here. </p>
 
   {{!-- {{Bootstrap with responsive columns}} --}}
-  <div class="add-wish-container">
-    <form action="/wish/create">
-      <button>Add wish</button>
-    </form> 
-  </div>
+
   
   {{!-- {{Bootstrap with responsive columns}} --}}
 
@@ -44,7 +40,16 @@
           </a>
         </div>
       </div>
-    {{/each}}        
+    {{/each}}
+      <div class="col-6 col-md-4 col-lg-3 my-3">
+        <div class="card card-custom card-custom-home">
+          <a href="/wish/create">
+            <div class="card-add-new card-body">
+              <h5 class="card-title">Add wish</h5>
+            </div>
+          </a>
+        </div>
+      </div>   
     </div>
   </div>
 </section>
