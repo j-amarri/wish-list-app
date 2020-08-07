@@ -86,7 +86,7 @@ p {
 
 /* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
 header {
-  background-image: url("/images/caravan.jpeg");
+  background-image: linear-gradient(#ffbe0b, #fb5607);
   background-position: left;
   height: 600px; }
 
@@ -102,11 +102,15 @@ header {
 
 .landing-title {
   letter-spacing: 1px;
-  color: white;
-  font-weight: 700; }
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 50px;
+  box-shadow: 5px 10px #8338ec;
+  border-radius: 1rem;
+  border: 5px solid white; }
 
 .landing-text {
-  color: white;
+  font-size: 20px;
   font-weight: 400; }
 
 img {
@@ -121,8 +125,8 @@ input,
 textarea,
 button {
   padding: 1em;
-  border: 1px solid rgba(207, 207, 207, 0.87);
-  border-radius: 0;
+  border-radius: 1rem;
+  border: 3px solid #8338ec;
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
@@ -161,7 +165,8 @@ textarea {
     .home-page .add-wish-container form {
       width: 100%; }
       .home-page .add-wish-container form button {
-        border-radius: 0.5rem;
+        border-radius: 1rem;
+        border: 3px solid #8338ec;
         width: 90%;
         padding: 0;
         margin: 0 auto;

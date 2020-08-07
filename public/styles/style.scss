@@ -121,7 +121,7 @@ p {
 /* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
 
 header {
-  background-image: url('/images/caravan.jpeg');
+  background-image: linear-gradient(#ffbe0b, #fb5607);
   background-position: left;
   height: 600px;
 }
@@ -143,12 +143,16 @@ header {
 
 .landing-title {
   letter-spacing: 1px;
-  color: white;
   font-weight: 700;
+  line-height: 1.2;
+  margin: 0 50px;
+  box-shadow: 5px 10px $primary;
+  border-radius: 1rem;
+  border: 5px solid white;
 }
 
 .landing-text {
-  color: white;
+  font-size: 20px;
   font-weight: 400;
 }
 
@@ -166,8 +170,8 @@ input,
 textarea,
 button {
   padding: 1em;
-  border: 1px solid $grey;
-  border-radius: 0;
+  border-radius: 1rem;
+  border: 3px solid $primary;
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
@@ -213,7 +217,8 @@ textarea {
     form {
       width: 100%;
       button {
-        border-radius: 0.5rem;
+        border-radius: 1rem;
+        border: 3px solid $primary;
         width: 90%;
         padding: 0;
         margin: 0 auto;
