@@ -211,7 +211,10 @@ wishRouter.get('/:id', routeGuard, (req, res, next) => {
     .populate('creator')
     .then(wish => {
       let isOwner = false;
-      if (wish.creator == user) {
+
+      console.log(typeof wish.creator);
+      console.log(typeof user);
+      if (wish.creator._id.toString() === user) {
         isOwner = true;
       }
 
