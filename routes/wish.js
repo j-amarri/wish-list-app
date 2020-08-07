@@ -208,11 +208,8 @@ wishRouter.get('/:id', routeGuard, (req, res, next) => {
   const user = req.session.user;
 
   Wish.findById(id)
+    .populate('creator')
     .then(wish => {
-      console.log('wish', wish);
-      console.log('creator', wish.creator);
-      console.log('user in session', user);
-
       let isOwner = false;
       if (wish.creator == user) {
         isOwner = true;

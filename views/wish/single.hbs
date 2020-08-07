@@ -7,6 +7,9 @@
   <hr>
 
   <div class="description-container">
+      <p>Created by <a href="/profile/{{ wish.creator._id}}" style="color: #fb5607;
+      text-decoration: underline;">{{ wish.creator.name }}</a></p>
+      <p>{{ wish.description }}</p>
      <img src="{{ wish.wishPicture }}" alt="{{ wish.category }} picture">
   </div>
   
