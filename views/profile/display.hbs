@@ -22,12 +22,8 @@
     <div class="col-12 col-md-6 col-lg-4 my-3">
       <div class="card card-custom">
           <a href="/wish/{{ this._id }}">
-
-          {{#if this.hasOwnPicture}}
+          
             <img class="card-img-top" src="{{ this.wishPicture }}" alt="{{ this.title }} picture">
-          {{else }}
-            <img class="card-img-top" src="{{ this.wishPicture }}{{ this.category }}" alt="Wish placeholder picture">
-          {{/if }}
 
           <div class="card-body">
             <h5 class="card-title">{{ this.title }}</h5>

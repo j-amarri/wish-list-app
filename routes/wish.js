@@ -25,7 +25,6 @@ wishRouter.post(
   upload.single('photo'),
   (req, res, next) => {
     const { title, description, category, public } = req.body;
-    console.log(req.body);
     const location = {
       type: 'Point',
       coordinates: [req.body.longitude, req.body.latitude]
@@ -49,6 +48,28 @@ wishRouter.post(
         description,
         category,
         public,
+        wishPicture:
+          category === 'Travel'
+            ? '/images/travel.jpeg'
+            : category === 'Relationship'
+            ? '/images/relationship.jpeg'
+            : category === 'Career'
+            ? '/images/career.jpeg'
+            : category === 'Financial'
+            ? '/images/financial.jpeg'
+            : category === 'Entertainment'
+            ? '/images/entertainment.jpeg'
+            : category === 'Adventure'
+            ? '/images/adventure.jpeg'
+            : category === 'Contribution'
+            ? '/images/contribution.jpeg'
+            : category === 'Creativity'
+            ? '/images/creativity.jpeg'
+            : category === 'Education'
+            ? '/images/education.jpeg'
+            : category === 'Health'
+            ? '/images/health.jpeg'
+            : '/images/other.jpeg',
         location,
         creator: req.session.user
       };

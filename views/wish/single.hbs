@@ -6,17 +6,10 @@
   
   <hr>
 
-  
   <div class="description-container">
-    {{#if wish.hasOwnPicture}}
-    <img src="{{wish.wishPicture}}" alt="{{ wish.title }} picture">
-     {{else }}
-     <img src="{{ wish.wishPicture }}{{ wish.category }}" alt="{{ wish.category }} picture">
-     {{/if }}
-     <p>{{ wish.description}}</p>
+     <img src="{{ wish.wishPicture }}" alt="{{ wish.category }} picture">
   </div>
   
-
   <div id="map-single"></div>
 
   {{#if isOwner}}
