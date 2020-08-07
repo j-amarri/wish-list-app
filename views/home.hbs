@@ -25,13 +25,13 @@
       <div class="col-12 col-md-6 col-lg-4 my-3">
   
         <div class="card card-custom">
-          <a href="/wish/{{ _id }}">
+          <a href="/wish/{{ this._id }}">
 
-          <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
+          <img class="card-img-top" src="{{ wishPicture }}" alt="{{ this.title }} picture">
 
           <div class="card-body">
-            <h5 class="card-title">{{ title }}</h5>
-            <span class="category-tag">{{ category }}</span>
+            <h5 class="card-title">{{ this.title }}</h5>
+            <span class="category-tag">{{ this.category }}</span>
 
             {{#if this.public}}
               <span class="public-tag">Public</span>
@@ -41,11 +41,11 @@
 
             
             {{#if complete}}
-              <form action="/home/{{ _id }}/incomplete" method="POST">
+              <form action="/home/{{ this._id }}/incomplete" method="POST">
                 <button class="btn btn-primary">Undo</button>
               </form>
             {{else}}
-              <form action="/home/{{ _id }}/congratulations" method="GET">
+              <form action="/home/{{ this._id }}/congratulations" method="GET">
                 <button class="btn btn-primary">Complete</button>
               </form>
             {{/if}}

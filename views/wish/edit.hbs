@@ -8,28 +8,21 @@
     <button>Update picture</button>
   </form>
 
-  <form method="POST" action="/wish/{{wish._id}}/edit" class="form-info">
+  <form method="POST" class="form-info">
     
     <div class="input-group my-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">Title</span>
       </div>
-      <input type="text" value="{{ wish.title }}" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
+      <input name="title" type="text" value="{{ wish.title }}" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group my-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon2">Description</span>
       </div>
-      <input type="text" value="{{ wish.description }}" class="form-control" placeholder="Decription" aria-label="Username" aria-describedby="basic-addon1">
+      <input name="description" type="text" value="{{ wish.description }}" class="form-control" placeholder="Decription" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-
-    
-
-
-
-    {{!-- <input name="title" value=""> --}}
-    {{!-- <input name="description" value="{{ wish.description }}" placeholder="Description" </input> --}}
 
     <div class="input-group my-3">
       <div class="input-group-prepend">

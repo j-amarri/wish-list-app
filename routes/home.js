@@ -10,6 +10,7 @@ router.get('/', routeGuard, (req, res, next) => {
   const id = req.session.user;
   Wish.find({ creator: id })
     .then(wishes => {
+      console.log(wishes);
       res.render('home', { wishes });
     })
     .catch(error => {

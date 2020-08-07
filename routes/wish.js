@@ -76,7 +76,9 @@ wishRouter.post(
     }
 
     Wish.create(data)
-      .then(() => {
+      .then(wishes => {
+        console.log('wishes rendered', wishes);
+        console.log('data rendered', data);
         console.log(req.body);
         res.redirect('/home');
       })
@@ -85,53 +87,6 @@ wishRouter.post(
       });
   }
 );
-
-wishRouter.post('/create', routeGuard, (req, res, next) => {
-  const { title, description, category, public } = req.body;
-  const location = {
-    type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
-  };
-
-  Wish.create({
-    title,
-    description,
-    category,
-    public,
-    location: location,
-    creator: req.session.user
-  })
-    .then(() => {
-      console.log();
-      res.redirect('/home');
-    })
-    .catch(error => {
-      next(error);
-    });
-});
-
-wishRouter.post('/create', routeGuard, (req, res, next) => {
-  const { title, description, category, public } = req.body;
-  const location = {
-    type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
-  };
-
-  Wish.create({
-    title,
-    description,
-    category,
-    public,
-    location: location,
-    creator: req.session.user
-  })
-    .then(() => {
-      res.redirect('/home');
-    })
-    .catch(error => {
-      next(error);
-    });
-});
 
 wishRouter.post('/:id/delete', routeGuard, (req, res, next) => {
   const id = req.params.id;
@@ -151,8 +106,10 @@ wishRouter.get('/:id/edit', routeGuard, (req, res, next) => {
 
   Wish.findById(id)
     .then(wish => {
+      console.log('Yet to be edited', wish);
+
       if (user == wish.creator) {
-        res.render('wish/edit', { wish });
+        res.render('wish/edit', { wish: wish });
       } else {
         res.redirect(`/wish/${id}`);
       }
@@ -165,6 +122,8 @@ wishRouter.get('/:id/edit', routeGuard, (req, res, next) => {
 wishRouter.post('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
   const { title, description, category, private } = req.body;
+  console.log('req.body', req.body);
+
   const location = {
     type: 'Point',
     coordinates: [req.body.longitude, req.body.latitude]
@@ -177,7 +136,8 @@ wishRouter.post('/:id/edit', routeGuard, (req, res, next) => {
     private,
     location: location
   })
-    .then(() => {
+    .then(wish => {
+      console.log('edited wish', wish);
       res.redirect('/home');
     })
     .catch(error => {
@@ -212,8 +172,8 @@ wishRouter.get('/:id', routeGuard, (req, res, next) => {
     .then(wish => {
       let isOwner = false;
 
-      console.log(typeof wish.creator);
-      console.log(typeof user);
+      console.log('wish', wish);
+
       if (wish.creator._id.toString() === user) {
         isOwner = true;
       }
