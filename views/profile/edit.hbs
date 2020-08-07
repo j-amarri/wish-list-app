@@ -1,18 +1,24 @@
-<h1>Edit your profile</h1>
 
+<div class="container profile-edit-container">
+  <h1>Edit your profile</h1>
 
-<img src="{{user.profilePhoto}}" alt="Profile picture">
-<form action="/profile/{{user._id}}/updatePhoto" method="POST" enctype="multipart/form-data">
-  <input type="file" name="photo">
-  <button>Update photo</button>
-</form>
+  <div class="profile-edit-img">
+    <img src="{{user.profilePhoto}}" alt="Profile picture">
+    <form action="/profile/{{user._id}}/updatePhoto" method="POST" enctype="multipart/form-data">
+      <input type="file" name="photo">
+      <button>Update photo</button>
+    </form>
 
-<form action="/profile/{{user.id}}/deletePhoto" method="POST" enctype="multipart/form-data">
-  <button>Delete photo</button>
-</form>
+    <form action="/profile/{{user.id}}/deletePhoto" method="POST" enctype="multipart/form-data">
+      <button>Delete photo</button>
+    </form>
+  </div>
 
-<form method="POST" >
-  <input type="text" name="name" value="{{user.name}}">
-  <input type="text" name="email" value="{{user.email}}">
-  <button>Save changes</button>
-</form>
+  
+
+  <form method="POST" >
+    <input type="text" name="name" value="{{user.name}}">
+    <input type="text" name="email" value="{{user.email}}">
+    <button>Save changes</button>
+  </form>
+</div>
