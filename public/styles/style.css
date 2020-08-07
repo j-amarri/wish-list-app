@@ -304,6 +304,10 @@ textarea {
   height: 200px;
   margin: 50px 0; }
 
+@media (min-width: 550px) {
+  #map-single {
+    height: 600px; } }
+
 .wish-coordinates {
   display: none; }
 

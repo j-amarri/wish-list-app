@@ -19,29 +19,51 @@ wishRouter.get('/create', routeGuard, (req, res) => {
   res.render('wish/create');
 });
 
-wishRouter.post('/create', routeGuard, (req, res, next) => {
-  const { title, description, category, public } = req.body;
-  const location = {
-    type: 'Point',
-    coordinates: [req.body.longitude, req.body.latitude]
-  };
+wishRouter.post(
+  '/create',
+  routeGuard,
+  upload.single('photo'),
+  (req, res, next) => {
+    const { title, description, category, public } = req.body;
+    console.log(req.body);
+    const location = {
+      type: 'Point',
+      coordinates: [req.body.longitude, req.body.latitude]
+    };
 
-  Wish.create({
-    title,
-    description,
-    category,
-    public,
-    location: location,
-    creator: req.session.user
-  })
-    .then(() => {
-      console.log();
-      res.redirect('/home');
-    })
-    .catch(error => {
-      next(error);
-    });
-});
+    let data;
+    if (req.file) {
+      data = {
+        title,
+        description,
+        category,
+        public,
+        hasOwnPicture: true,
+        wishPicture: req.file.path,
+        location: location,
+        creator: req.session.user
+      };
+    } else {
+      data = {
+        title,
+        description,
+        category,
+        public,
+        location,
+        creator: req.session.user
+      };
+    }
+
+    Wish.create(data)
+      .then(() => {
+        console.log(req.body);
+        res.redirect('/home');
+      })
+      .catch(error => {
+        next(error);
+      });
+  }
+);
 
 wishRouter.post('/:id/delete', routeGuard, (req, res, next) => {
   const id = req.params.id;
