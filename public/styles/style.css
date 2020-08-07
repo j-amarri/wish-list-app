@@ -111,6 +111,7 @@ header {
   text-align: center; }
 
 .auth-form {
+  width: 100%;
   color: white;
   padding: 50px;
   font-weight: 700; }
@@ -119,6 +120,11 @@ header {
     border-radius: 10px; }
   .auth-form input {
     border-radius: 10px; }
+
+@media (min-width: 550px) {
+  .auth-form {
+    width: 30%;
+    margin: 0 auto; } }
 
 .landing-title {
   letter-spacing: 1px;
@@ -257,9 +263,13 @@ textarea {
     align-items: center;
     height: 100%; }
     .card-custom .card-add-new .card-title {
+      color: #8338ec;
       margin: 0 auto;
       font-size: 2rem;
       font-weight: 500; }
+    .card-custom .card-add-new img {
+      width: 20%;
+      margin-bottom: 20px; }
 
 .card-custom-home {
   height: 100%;

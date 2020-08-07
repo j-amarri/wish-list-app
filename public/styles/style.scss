@@ -150,6 +150,7 @@ header {
 }
 
 .auth-form {
+  width: 100%;
   color: white;
   padding: 50px;
   font-weight: 700;
@@ -161,6 +162,13 @@ header {
 
   input {
     border-radius: 10px;
+  }
+}
+
+@media (min-width: 550px) {
+  .auth-form {
+    width: 30%;
+    margin: 0 auto;
   }
 }
 
@@ -342,9 +350,14 @@ textarea {
     align-items: center;
     height: 100%;
     .card-title {
+      color: $primary;
       margin: 0 auto;
       font-size: 2rem;
       font-weight: 500;
+    }
+    img {
+      width: 20%;
+      margin-bottom: 20px;
     }
   }
 }
