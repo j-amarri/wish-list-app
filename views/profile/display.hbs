@@ -7,7 +7,7 @@
       <h3>{{user.name}}</h3>
       {{#if isOwner}}
         <a href="/profile/{{user.id}}/edit">
-          <button class="btn btn-primary">Edit profile</button>
+          <button>Edit profile</button>
         </a>
       {{/if }}
     </div>
@@ -32,6 +32,10 @@
           <div class="card-body">
             <h5 class="card-title">{{ this.title }}</h5>
             <p class="card-category">{{ this.category }}</p>
+            {{#if this.public}}
+            {{else}}
+              <span class="private-tag">Private</span>
+            {{/if}}
           
           </div>
           </a>

@@ -1,17 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 *, *:before, *:after {
   box-sizing: border-box; }
 
 body {
   width: 100%;
-  max-width: 52em;
+  color: #8338ec;
   padding: 0;
   margin: 0 auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Staatliches', cursive;
   line-height: 2; }
 
 .container {
-  width: 90%; }
+  padding: 50px; }
+
+button {
+  background-color: #8338ec;
+  color: red; }
 
 a {
   color: inherit;
@@ -91,7 +95,7 @@ header {
   padding: 50px;
   font-weight: 700; }
   .auth-form button {
-    background-color: #fb5607;
+    background-color: #8338ec;
     border-radius: 10px; }
   .auth-form input {
     border-radius: 10px; }
@@ -104,14 +108,6 @@ header {
 .landing-text {
   color: white;
   font-weight: 400; }
-
-.wish {
-  padding: 1em;
-  border-radius: 0.5em;
-  border: 1px solid lightgrey; }
-
-.wish-list .wish {
-  box-shadow: 0 0.125em 1em -0.25em #667799; }
 
 img {
   width: 100%;
@@ -138,19 +134,28 @@ textarea {
 
 /* ----- HOME PAGE ----- */
 .home-page {
-  width: 90%;
-  margin: 0 auto; }
+  background-image: linear-gradient(#ffbe0b, #fb5607);
+  width: 100%; }
+  .home-page p {
+    color: #8338ec;
+    padding: 0 50px;
+    font-size: 18px; }
   .home-page h1 {
-    font-size: 1rem;
-    font-weight: 600; }
+    font-family: 'Staatliches', cursive;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0 50px;
+    color: #8338ec;
+    line-height: 1.2; }
   .home-page .add-wish-container {
+    font-size: 20px;
     width: 100%;
     padding: 1.25rem 0;
     position: fixed;
     z-index: 1000;
     bottom: 0;
     left: 0;
-    background-color: #fff;
+    background-color: transparent;
     display: flex;
     align-items: center; }
     .home-page .add-wish-container form {
@@ -160,57 +165,68 @@ textarea {
         width: 90%;
         padding: 0;
         margin: 0 auto;
-        border: solid 2px;
-        background-color: #fff;
+        border: solid 4px white;
+        background-color: #8338ec;
+        color: white;
         font-weight: 600; }
       .home-page .add-wish-container form button:hover {
-        border: solid 2px #9c7d18;
-        color: #9c7d18; }
-  .home-page .card {
-    width: 50%; }
-  .home-page .card-img-top {
-    height: 10%; }
-  .home-page .card-custom {
+        border: solid 2px #ffbe0b;
+        color: #ffbe0b; }
+
+.card-custom {
+  color: #8338ec;
+  width: 100%;
+  border-radius: 1rem;
+  border: 3px solid #8338ec;
+  box-shadow: 5px 10px #8338ec; }
+  .card-custom img {
     width: 100%;
-    margin: 0;
-    border-radius: 1rem;
-    border: transparent; }
-    .home-page .card-custom img {
+    max-height: 200px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem; }
+  .card-custom .card-body {
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border: 1px solid rgba(207, 207, 207, 0.87);
+    padding: 20px 0 10px 0; }
+    .card-custom .card-body h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0 20px; }
+    .card-custom .card-body p {
+      padding: 0 20px;
+      font-size: 0.8rem; }
+    .card-custom .card-body form {
       width: 100%;
-      max-height: 200px;
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem; }
-    .home-page .card-custom .card-body {
-      border-bottom-right-radius: 1rem;
-      border-bottom-left-radius: 1rem;
-      border: 1px solid rgba(207, 207, 207, 0.87);
-      padding: 20px 0 10px 0; }
-      .home-page .card-custom .card-body h5 {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .card-custom .card-body form button {
         font-size: 0.9rem;
-        font-weight: 600;
-        padding: 0 20px; }
-      .home-page .card-custom .card-body p {
-        padding: 0 20px;
-        font-size: 0.8rem; }
-      .home-page .card-custom .card-body form {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-        .home-page .card-custom .card-body form button {
-          font-size: 0.9rem;
-          margin: 0;
-          padding: 0.2rem 0;
-          width: 90%;
-          color: #3fb97c;
-          border: 2px solid #3fb97c;
-          background-color: #fff; }
-        .home-page .card-custom .card-body form button:hover {
-          color: #fff;
-          background-color: #3fb97c; }
+        margin: 0;
+        padding: 0.2rem 0;
+        width: 90%;
+        color: #3fb97c;
+        border: 2px solid #3fb97c;
+        background-color: #fff; }
+      .card-custom .card-body form button:hover {
+        color: #fff;
+        background-color: #3fb97c; }
+
+.private-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  color: white;
+  border: 1px solid #ff006e;
+  background-color: #ff006e; }
 
 /* ----- MAP ----- */
 #map-single {
+  border-radius: 1rem;
+  border: 3px solid #8338ec;
+  box-shadow: 5px 10px #8338ec;
   width: 100%;
   height: 200px;
   margin: 50px 0; }
@@ -265,18 +281,19 @@ section {
   width: 90%;
   margin: auto; }
 
-.wish-edit-container img {
-  width: 100%;
-  border-radius: 0.4rem; }
-
-.wish-edit-container .form-img {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-  .wish-edit-container .form-img input,
-  .wish-edit-container .form-img button {
-    width: 47%;
+.wish-edit-container {
+  padding: 50px; }
+  .wish-edit-container img {
+    width: 100%;
     border-radius: 0.4rem; }
+  .wish-edit-container .form-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .wish-edit-container .form-img input,
+    .wish-edit-container .form-img button {
+      width: 47%;
+      border-radius: 0.4rem; }
 
 /* ----- PROFILE PAGE ------  */
 .background {

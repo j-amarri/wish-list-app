@@ -45,7 +45,8 @@
           <div class="card-body">
             <h5 class="card-title">{{ this.title }}</h5>
             <p class="card-category">{{ this.category }}</p>
-            <p>Created by {{ this.creator.name }}</p>
+            <p>Created by <a href="/profile/{{ this.creator._id}}" style="color: #fb5607;
+      text-decoration: underline;">{{ this.creator.name }}</a></p>
           </div>
           </a>
       </div>

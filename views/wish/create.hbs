@@ -1,42 +1,45 @@
-<h1>Create your Wish</h1>
+<div class="container">
 
-<form method="POST">
-  <input name="title" placeholder="The title of your wish..."></textarea>
-  <textarea name="description" placeholder="The description of your wish..."></textarea>
+  <h1>Create your Wish</h1>
 
-  <label for="category-select">Your wish category</label>
-  <select name="category" id="category-select">
-    <option value="Travel">Travel</option>
-    <option value="Relationship">Relationship</option>
-    <option value="Career">Career</option>
-    <option value="Financial">Financial</option>
-    <option value="Entertainment">Entertainment</option>
-    <option value="Adventure">Adventure</option>
-    <option value="Contribution">Contribution</option>
-    <option value="Creativity">Creativity</option>
-    <option value="Education">Education</option>
-    <option value="Health">Health</option>
-    <option value="Other">Other</option>
-  </select>
+  <form method="POST">
+    <input name="title" placeholder="The title of your wish..."></textarea>
+    <textarea name="description" placeholder="The description of your wish..."></textarea>
 
-  <p>Who should see your wish?</p>
-  <div>
-    <input type="radio" id="public" name="public" value="true">
-    <label for="public">Public</label>
-  </div>
-  <div>
-    <input type="radio" id="private" name="public" value="false">
-    <label for="private">Private</label>
-  </div>
-  <div class="wish-coordinates">
-    <input id="latitude-input" type="text" name="latitude" placeholder="latitude">
-    <input id="longitude-input" type="text" name="longitude" placeholder="longitude">
-  </div>
+    <label for="category-select">Your wish category</label>
+    <select name="category" id="category-select">
+      <option value="Travel">Travel</option>
+      <option value="Relationship">Relationship</option>
+      <option value="Career">Career</option>
+      <option value="Financial">Financial</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Contribution">Contribution</option>
+      <option value="Creativity">Creativity</option>
+      <option value="Education">Education</option>
+      <option value="Health">Health</option>
+      <option value="Other">Other</option>
+    </select>
 
-  <div id="map-single"></div>
+    <p>Who should see your wish?</p>
+    <div>
+      <input type="radio" id="public" name="public" value="true">
+      <label for="public">Public</label>
+    </div>
+    <div>
+      <input type="radio" id="private" name="public" value="false">
+      <label for="private">Private</label>
+    </div>
+    <div class="wish-coordinates">
+      <input id="latitude-input" type="text" name="latitude" placeholder="latitude">
+      <input id="longitude-input" type="text" name="longitude" placeholder="longitude">
+    </div>
 
-  <button>Create wish</button>
-</form>
+    <div id="map-single"></div>
+
+    <button>Create wish</button>
+  </form>
+</div>
 
 <script>
   function init() {
