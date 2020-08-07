@@ -10,6 +10,12 @@ body {
   font-family: 'Staatliches', cursive;
   line-height: 2; }
 
+body,
+html {
+  height: 100%;
+  background: linear-gradient(#ffbe0b, #fb5607) no-repeat center center fixed;
+  background-size: cover; }
+
 .container {
   padding: 50px; }
 
@@ -86,9 +92,8 @@ p {
 
 /* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
 header {
-  background-image: linear-gradient(#ffbe0b, #fb5607);
   background-position: left;
-  height: 600px; }
+  height: 100%; }
 
 .auth-form {
   color: white;
@@ -138,7 +143,6 @@ textarea {
 
 /* ----- HOME PAGE ----- */
 .home-page {
-  background-image: linear-gradient(#ffbe0b, #fb5607);
   width: 100%; }
   .home-page p {
     color: #8338ec;
@@ -189,8 +193,6 @@ textarea {
     max-height: 200px;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem; }
-  .card-custom .card-custome-home {
-    height: 100% !important; }
   .card-custom .card-body {
     padding: 20px 0 10px 0; }
     .card-custom .card-body h5 {
@@ -226,6 +228,14 @@ textarea {
       margin: 0 auto;
       font-size: 2rem;
       font-weight: 500; }
+
+.card-custom-home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .card-custom-home h5 {
+    text-align: center; }
 
 .private-tag {
   position: absolute;
@@ -352,7 +362,8 @@ footer {
   align-items: baseline;
   height: 100px;
   padding: 20px;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-top: 10px; }
   footer a {
     text-decoration: underline; }
 
