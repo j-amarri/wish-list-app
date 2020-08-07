@@ -21,9 +21,10 @@ a:hover {
   text-decoration: none; }
 
 nav {
-  width: 90%;
+  width: 100%;
   display: flex;
-  margin: auto; }
+  margin: auto;
+  background-color: #8338ec; }
   nav a,
   nav button {
     padding: 1em 0;
@@ -41,11 +42,12 @@ nav {
     width: 100%;
     display: flex;
     list-style: none;
-    padding: 2rem 0;
-    padding-top: 3rem;
-    justify-content: space-between; }
+    padding: 1rem;
+    justify-content: space-around;
+    align-items: center; }
     nav ul li {
-      padding-left: 0; }
+      padding-left: 0;
+      color: white; }
       nav ul li a,
       nav ul li button {
         font-size: 1rem;
@@ -55,13 +57,16 @@ nav {
         text-decoration: none;
         border-bottom: solid 2px #9c7d18; }
       nav ul li button {
-        color: #b85454;
-        padding-bottom: 0.5rem; }
+        color: #ffbe0b; }
       nav ul li button:hover {
         border-bottom: solid 2px #b85454; }
       nav ul li button:focus {
         outline: none;
         box-shadow: none; }
+
+.logo {
+  height: 50px;
+  width: 50px; }
 
 h1,
 h2,
@@ -74,6 +79,31 @@ p {
   h3:not(:last-child),
   p:not(:last-child) {
     margin-bottom: 1rem; }
+
+/* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
+header {
+  background-image: url("/images/caravan.jpeg");
+  background-position: left;
+  height: 600px; }
+
+.auth-form {
+  color: white;
+  padding: 50px;
+  font-weight: 700; }
+  .auth-form button {
+    background-color: #fb5607;
+    border-radius: 10px; }
+  .auth-form input {
+    border-radius: 10px; }
+
+.landing-title {
+  letter-spacing: 1px;
+  color: white;
+  font-weight: 700; }
+
+.landing-text {
+  color: white;
+  font-weight: 400; }
 
 .wish {
   padding: 1em;
@@ -258,6 +288,15 @@ section {
 
 /* ----- FOOTER ------ */
 footer {
-  display: flex; }
+  background-color: #8338ec;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 100px;
+  padding: 20px;
+  font-weight: 400; }
+  footer a {
+    text-decoration: underline; }
 
 /*# sourceMappingURL=style.css.map */
