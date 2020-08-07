@@ -35,7 +35,6 @@ wishRouter.post('/create', routeGuard, (req, res, next) => {
     creator: req.session.user
   })
     .then(() => {
-      console.log();
       res.redirect('/home');
     })
     .catch(error => {

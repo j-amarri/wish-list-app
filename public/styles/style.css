@@ -67,9 +67,11 @@ nav {
         text-decoration: none;
         border-bottom: solid 2px #ffbe0b; }
       nav ul li button {
-        color: #fb5607; }
+        color: #fb5607;
+        padding: 1rem 0; }
       nav ul li button:hover {
-        border-bottom: solid 2px #ffbe0b; }
+        border-bottom: solid 2px #ffbe0b;
+        border-radius: 0; }
       nav ul li button:focus {
         outline: none;
         box-shadow: none; }
@@ -395,8 +397,11 @@ section {
   border-radius: 1rem;
   object-fit: cover; }
 
-.profile-edit-container .profile-edit-img:nth-child(1n + 1) {
-  margin: 10rem auto; }
+.profile-edit-container .profile-edit-img {
+  margin-bottom: 2rem; }
+  .profile-edit-container .profile-edit-img form input,
+  .profile-edit-container .profile-edit-img form button {
+    margin: 0.5rem 0; }
 
 /* ----- EXPLORE PAGE ------ */
 .explore {

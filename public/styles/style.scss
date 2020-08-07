@@ -94,9 +94,11 @@ nav {
       }
       button {
         color: #fb5607;
+        padding: 1rem 0;
       }
       button:hover {
         border-bottom: solid 2px $secondary;
+        border-radius: 0;
       }
 
       button:focus {
@@ -544,8 +546,14 @@ section {
     object-fit: cover;
   }
 
-  .profile-edit-img:nth-child(1n + 1) {
-    margin: 10rem auto;
+  .profile-edit-img {
+    margin-bottom: 2rem;
+    form {
+      input,
+      button {
+        margin: 0.5rem 0;
+      }
+    }
   }
 }
 
