@@ -27,11 +27,7 @@
         <div class="card card-custom">
           <a href="/wish/{{ _id }}">
 
-          {{#if hasOwnPicture}}
-            <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
-          {{else }}
-            <img class="card-img-top" src="{{ wishPicture }}{{ category }}" alt="Wish placeholder picture">
-          {{/if }}
+          <img class="card-img-top" src="{{ wishPicture }}" alt="{{ title }} picture">
 
           <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
