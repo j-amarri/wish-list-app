@@ -65,6 +65,53 @@ wishRouter.post(
   }
 );
 
+wishRouter.post('/create', routeGuard, (req, res, next) => {
+  const { title, description, category, public } = req.body;
+  const location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
+
+  Wish.create({
+    title,
+    description,
+    category,
+    public,
+    location: location,
+    creator: req.session.user
+  })
+    .then(() => {
+      console.log();
+      res.redirect('/home');
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+wishRouter.post('/create', routeGuard, (req, res, next) => {
+  const { title, description, category, public } = req.body;
+  const location = {
+    type: 'Point',
+    coordinates: [req.body.longitude, req.body.latitude]
+  };
+
+  Wish.create({
+    title,
+    description,
+    category,
+    public,
+    location: location,
+    creator: req.session.user
+  })
+    .then(() => {
+      res.redirect('/home');
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 wishRouter.post('/:id/delete', routeGuard, (req, res, next) => {
   const id = req.params.id;
 
