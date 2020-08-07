@@ -24,6 +24,13 @@ body {
   line-height: 2;
 }
 
+body,
+html {
+  height: 100%;
+  background: linear-gradient(#ffbe0b, #fb5607) no-repeat center center fixed;
+  background-size: cover;
+}
+
 .container {
   padding: 50px;
 }
@@ -122,9 +129,8 @@ p {
 
 header {
   padding-top: 50px;
-  background-image: linear-gradient(#ffbe0b, #fb5607);
   background-position: left;
-  height: 600px;
+  height: 100%;
 }
 
 .auth-form {
@@ -186,7 +192,7 @@ textarea {
 
 /* ----- HOME PAGE ----- */
 .home-page {
-  background-image: linear-gradient(#ffbe0b, #fb5607);
+  // background-image: linear-gradient(#ffbe0b, #fb5607);
   width: 100%;
 
   p {
@@ -251,10 +257,6 @@ textarea {
     border-top-right-radius: 1rem;
   }
 
-  .card-custome-home {
-    height: 100% !important;
-  }
-
   .card-body {
     padding: 20px 0 10px 0;
 
@@ -302,6 +304,17 @@ textarea {
       font-size: 2rem;
       font-weight: 500;
     }
+  }
+}
+
+.card-custom-home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h5 {
+    text-align: center;
   }
 }
 
@@ -486,6 +499,7 @@ footer {
   height: 100px;
   padding: 20px;
   font-weight: 400;
+  margin-top: 10px;
 
   a {
     text-decoration: underline;
