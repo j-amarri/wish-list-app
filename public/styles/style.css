@@ -92,13 +92,7 @@ p {
 
 /* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
 header {
-<<<<<<< HEAD
   padding-top: 50px;
-  background-image: linear-gradient(#ffbe0b, #fb5607);
-||||||| merged common ancestors
-  background-image: linear-gradient(#ffbe0b, #fb5607);
-=======
->>>>>>> d5171375c5262a1b8b6f59df42bae76aee5ded43
   background-position: left;
   height: 100%; }
 
@@ -138,7 +132,7 @@ textarea,
 button {
   padding: 1em;
   border-radius: 1rem;
-  border: 3px solid #8338ec;
+  border: 3px solid white;
   margin-bottom: 1em;
   font: inherit;
   color: inherit;
