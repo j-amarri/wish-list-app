@@ -1,6 +1,4 @@
 <section class="home-page">
-  <h1 class="pt-3">Welcome to Flame Wisher!</h1>
-  <p>Flame throw your wishes here. </p>
 
   {{!-- {{Bootstrap with responsive columns}} --}}
 
@@ -8,6 +6,8 @@
   {{!-- {{Bootstrap with responsive columns}} --}}
 
   <div class="container">
+    <h1 class="welcome-message">Welcome to Wishthrower!</h1>
+    <p class="welcome-text">Flame throw all your wishes here.</br>Make it count. Go wild.</p>
     <div class="row">
 
       <div class="col-12 col-md-6 col-lg-4 my-3">
@@ -34,7 +34,13 @@
 
           <div class="card-body">
             <h5 class="card-title">{{ title }}</h5>
-            <p class="card-category">{{ category }}</p>
+            <span class="category-tag">{{ category }}</span>
+
+            {{#if this.public}}
+              <span class="public-tag">Public</span>
+            {{else}}
+              <span class="private-tag">Private</span>
+            {{/if}}
 
             
             {{#if complete}}

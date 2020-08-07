@@ -31,8 +31,9 @@
 
           <div class="card-body">
             <h5 class="card-title">{{ this.title }}</h5>
-            <p class="card-category">{{ this.category }}</p>
+            <span class="category-tag">{{ this.category }}</span>
             {{#if this.public}}
+              <span class="public-tag">Public</span>
             {{else}}
               <span class="private-tag">Private</span>
             {{/if}}
