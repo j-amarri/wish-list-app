@@ -8,10 +8,7 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: 'Staatliches', cursive;
-  line-height: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
+  line-height: 2; }
 
 body,
 html {
@@ -36,7 +33,7 @@ a:hover {
 nav {
   width: 100%;
   display: flex;
-  margin: 0 auto;
+  margin: auto;
   background-color: #8338ec; }
   nav a,
   nav button {
@@ -250,6 +247,16 @@ textarea {
   border: 1px solid #ff006e;
   background-color: #ff006e; }
 
+.category-tag {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  right: 10px;
+  color: white;
+  border-radius: 2px;
+  background-color: #ffbe0b;
+  padding: 0 3px; }
+
 /* ----- MAP ----- */
 #map-single {
   border-radius: 1rem;
@@ -366,7 +373,8 @@ footer {
   align-items: baseline;
   height: 100px;
   padding: 20px;
-  font-weight: 400; }
+  font-weight: 400;
+  margin-top: 10px; }
   footer a {
     text-decoration: underline; }
 

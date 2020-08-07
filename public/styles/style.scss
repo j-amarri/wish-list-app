@@ -22,11 +22,6 @@ body {
   margin: 0 auto;
   font-family: 'Staatliches', cursive;
   line-height: 2;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-between;
 }
 
 body,
@@ -57,7 +52,7 @@ a:hover {
 nav {
   width: 100%;
   display: flex;
-  margin: 0 auto;
+  margin: auto;
   background-color: #8338ec;
 
   a,
@@ -333,6 +328,17 @@ textarea {
   background-color: #ff006e;
 }
 
+.category-tag {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  right: 10px;
+  color: white;
+  border-radius: 2px;
+  background-color: #ffbe0b;
+  padding: 0 3px;
+}
+
 /* ----- MAP ----- */
 
 #map-single {
@@ -504,6 +510,7 @@ footer {
   height: 100px;
   padding: 20px;
   font-weight: 400;
+  margin-top: 10px;
 
   a {
     text-decoration: underline;
