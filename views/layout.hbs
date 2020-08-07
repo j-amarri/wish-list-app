@@ -11,22 +11,11 @@
 </head>
 
 <body>
-  <!-- new navigation -->
-{{!--   <nav class="navbar navbar-light">
-    <ul>
-      <a href="#"></a>
-        <img class="navbar-brand" src="/images/fire.png" width="30" height="30" alt="" loading="lazy">
-      </a>
-      <a class="nav-link" href="/sign-in">Sign In</a>
-      <a class="nav-link" href="/sign-up">Sign Up</a>
-    </ul>
-  </nav> --}}
-  {{!-- end of new navigation --}}
   <nav>
     <ul>
     <li><img class="logo" src="/images/fire.png" alt="logo"></li>
     {{#if user}}
-    <li><a href="/home">Wishes</a></li>
+    <li><a href="/home">My wishes</a></li>
     <li><a href="/explore">Explore</a></li>
     <li><a href="/profile/{{user.id}}">Profile</a></li>
     <li><form action="/sign-out" method="POST">
