@@ -8,7 +8,10 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: 'Staatliches', cursive;
-  line-height: 2; }
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
 
 body,
 html {
@@ -33,7 +36,7 @@ a:hover {
 nav {
   width: 100%;
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   background-color: #8338ec; }
   nav a,
   nav button {
@@ -363,8 +366,7 @@ footer {
   align-items: baseline;
   height: 100px;
   padding: 20px;
-  font-weight: 400;
-  margin-top: 10px; }
+  font-weight: 400; }
   footer a {
     text-decoration: underline; }
 

@@ -22,6 +22,11 @@ body {
   margin: 0 auto;
   font-family: 'Staatliches', cursive;
   line-height: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
 }
 
 body,
@@ -52,7 +57,7 @@ a:hover {
 nav {
   width: 100%;
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   background-color: #8338ec;
 
   a,
@@ -499,7 +504,6 @@ footer {
   height: 100px;
   padding: 20px;
   font-weight: 400;
-  margin-top: 10px;
 
   a {
     text-decoration: underline;
