@@ -1,0 +1,191 @@
+/* ----- HOME PAGE ----- */
+@media (min-width: 550px) {
+  .home-page {
+    h1,
+    > p {
+      text-align: center;
+    }
+  }
+}
+
+.home-page {
+  // background-image: linear-gradient(#ffbe0b, #fb5607);
+  width: 100%;
+
+  p {
+    color: $primary;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0 50px;
+    color: #8338ec;
+    line-height: 1.2;
+  }
+
+  .welcome-message {
+    width: 100%;
+    letter-spacing: 1px;
+    font-weight: 700;
+    line-height: 1.2;
+    box-shadow: 5px 10px $primary;
+    border-radius: 1rem;
+    border: 5px solid $primary;
+    padding: 10px;
+    background-color: white;
+  }
+
+  .welcome-text {
+    padding: 10px;
+    line-height: 1.3;
+  }
+
+  .add-wish-container {
+    font-size: 20px;
+    width: 100%;
+    padding: 1.25rem 0;
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+
+    form {
+      width: 100%;
+      button {
+        border-radius: 1rem;
+        border: 3px solid $primary;
+        width: 90%;
+        padding: 0;
+        margin: 0 auto;
+        border: solid 4px white;
+        background-color: $primary;
+        color: white;
+        font-weight: 600;
+      }
+
+      button:hover {
+        border: solid 3px $secondary;
+        color: $secondary;
+      }
+    }
+  }
+}
+
+.card-custom {
+  color: $primary;
+  width: 100%;
+  border-radius: 1rem;
+  border: 3px solid $primary;
+  box-shadow: 5px 10px $primary;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  .card-body {
+    padding: 20px 0 10px 0;
+
+    h5 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0 20px;
+    }
+
+    p {
+      padding: 0 20px;
+      font-size: 0.8rem;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button {
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 0.2rem 0;
+        width: 90%;
+        color: $primary;
+        border: 2px solid $primary;
+        background-color: #fff;
+      }
+
+      button:hover {
+        color: #fff;
+        background-color: $primary;
+      }
+    }
+  }
+
+  .card-add-new {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    .card-title {
+      color: $primary;
+      margin: 0 auto;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    img {
+      width: 20%;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.card-custom-home {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h5 {
+    text-align: center;
+  }
+}
+
+.private-tag {
+  font-size: 12px;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: white;
+  background-color: #ff006e;
+  border-radius: 2px;
+  padding: 0 3px;
+}
+
+.public-tag {
+  font-size: 12px;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  color: white;
+  background-color: #3a86ff;
+  border-radius: 2px;
+  padding: 0 3px;
+}
+
+.category-tag {
+  position: absolute;
+  font-size: 12px;
+  top: 10px;
+  right: 10px;
+  color: white;
+  border-radius: 2px;
+  background-color: #ffbe0b;
+  padding: 0 3px;
+}

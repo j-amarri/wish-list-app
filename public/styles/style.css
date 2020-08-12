@@ -95,7 +95,7 @@ p {
   p:not(:last-child) {
     margin-bottom: 1rem; }
 
-/* ----- LANDING PAGE, SIGN IN, SIGN UP ------- */
+/*----- LANDING PAGE, SIGN IN, SIGN UP ------- */
 header {
   background-position: left;
   height: 100%;
@@ -385,10 +385,6 @@ section {
   background-color: #8338ec;
   color: #fff; }
 
-/* ----- CONGRATS PAGE ------  */
-.congrats {
-  width: 90%; }
-
 /* ----- PROFILE PAGE ------  */
 .background {
   background-color: coral; }
@@ -474,5 +470,9 @@ footer {
   font-weight: 400; }
   footer a {
     text-decoration: underline; }
+
+/* ----- CONGRATS PAGE ------  */
+.congrats {
+  width: 90%; }
 
 /*# sourceMappingURL=style.css.map */

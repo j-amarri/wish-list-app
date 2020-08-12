@@ -1,0 +1,73 @@
+/*----- LANDING PAGE, SIGN IN, SIGN UP ------- */
+header {
+  background-position: left;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  h1 {
+    max-width: 52rem;
+  }
+}
+.index-header {
+  p {
+    margin: 5rem 2rem;
+    text-align: center;
+  }
+}
+.auth-form {
+  width: 100%;
+  color: white;
+  padding: 50px;
+  font-weight: 700;
+  button {
+    background-color: $primary;
+    border-radius: 10px;
+  }
+  input {
+    border-radius: 10px;
+  }
+}
+@media (min-width: 550px) {
+  .auth-form {
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+.landing-title {
+  letter-spacing: 1px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 50px;
+  box-shadow: 5px 10px $primary;
+  border-radius: 1rem;
+  border: 5px solid white;
+}
+.landing-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+img {
+  width: 100%;
+  max-width: 100%;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+input,
+textarea,
+button {
+  padding: 1em;
+  border-radius: 1rem;
+  border: 3px solid white;
+  margin-bottom: 1em;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+textarea {
+  min-height: 8em;
+  resize: vertical;
+}

@@ -1,0 +1,15 @@
+/* ----- FOOTER ------ */
+footer {
+  background-color: #8338ec;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  height: 100px;
+  padding: 20px;
+  font-weight: 400;
+
+  a {
+    text-decoration: underline;
+  }
+}

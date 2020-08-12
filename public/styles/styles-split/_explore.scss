@@ -1,0 +1,60 @@
+/* ----- EXPLORE PAGE ------ */
+
+.explore {
+  width: 100%;
+
+  .form-explore {
+    width: 100%;
+    margin-bottom: 2rem;
+
+    .form-container {
+      width: 100%;
+      form {
+        width: 100%;
+        .select-container {
+          width: 100%;
+          padding: 0;
+          select {
+            background-color: white;
+            border: 3px solid $primary;
+            padding: 0.5rem 0;
+            color: $primary;
+            text-align-last: center;
+            border-radius: 1rem;
+            width: 100%;
+          }
+
+          select:hover {
+            cursor: pointer;
+            background-color: $primary;
+            color: #fff;
+          }
+
+          select:focus {
+            outline: none;
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .col-custom {
+    padding: 0;
+    button {
+      background-color: white;
+      border: 3px solid $primary;
+      width: 100%;
+      margin: 0.5rem 0 0 0;
+      padding: 0.5rem;
+      border-color: $primary;
+      background-color: #fff;
+    }
+
+    button:hover {
+      color: #fff;
+      background-color: $primary;
+    }
+  }
+}
