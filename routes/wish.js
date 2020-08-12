@@ -30,6 +30,11 @@ wishRouter.post(
       coordinates: [req.body.longitude, req.body.latitude]
     };
 
+    const image =
+      category === 'Other'
+        ? '/images/other.jpeg'
+        : `/images/${category.toLowerCase()}.jpeg`;
+
     let data;
     if (req.file) {
       data = {
@@ -48,28 +53,7 @@ wishRouter.post(
         description,
         category,
         public,
-        wishPicture:
-          category === 'Travel'
-            ? '/images/travel.jpeg'
-            : category === 'Relationship'
-            ? '/images/relationship.jpeg'
-            : category === 'Career'
-            ? '/images/career.jpeg'
-            : category === 'Financial'
-            ? '/images/financial.jpeg'
-            : category === 'Entertainment'
-            ? '/images/entertainment.jpeg'
-            : category === 'Adventure'
-            ? '/images/adventure.jpeg'
-            : category === 'Contribution'
-            ? '/images/contribution.jpeg'
-            : category === 'Creativity'
-            ? '/images/creativity.jpeg'
-            : category === 'Education'
-            ? '/images/education.jpeg'
-            : category === 'Health'
-            ? '/images/health.jpeg'
-            : '/images/other.jpeg',
+        wishPicture: image,
         location,
         creator: req.session.user
       };
