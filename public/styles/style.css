@@ -36,7 +36,7 @@ a:hover {
 nav {
   width: 100%;
   display: flex;
-  margin: auto;
+  margin: 0 auto;
   background-color: #8338ec; }
   nav a,
   nav button {
